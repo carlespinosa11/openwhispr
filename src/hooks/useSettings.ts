@@ -46,6 +46,8 @@ export interface TranscriptionSettings {
   remoteTranscriptionModel: string;
   customDictionary: string[];
   snippets: Snippet[];
+  textCorrections: string[];
+  cleanupAppContext: boolean;
   assemblyAiStreaming: boolean;
   showTranscriptionPreview: boolean;
 }
@@ -316,6 +318,10 @@ function useSettingsInternal() {
     customDictionary: store.customDictionary,
     snippets: store.snippets,
     setSnippets: store.setSnippets,
+    textCorrections: store.textCorrections,
+    setTextCorrections: store.setTextCorrections,
+    cleanupAppContext: store.cleanupAppContext,
+    setCleanupAppContext: store.setCleanupAppContext,
     assemblyAiStreaming: store.assemblyAiStreaming,
     setAssemblyAiStreaming: store.setAssemblyAiStreaming,
     autoGenerateNoteTitle: store.autoGenerateNoteTitle,

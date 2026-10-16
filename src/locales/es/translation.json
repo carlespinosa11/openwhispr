@@ -3521,6 +3521,7 @@
     "noMatches": "Sin coincidencias — pulsa Enter para añadir \"{{word}}\"",
     "tabDictionary": "Diccionario",
     "tabSnippets": "Snippets",
+    "tabCorrections": "Correcciones",
     "snippets": {
       "title": "Snippets",
       "edit": "Editar {{trigger}}",
@@ -3548,7 +3549,19 @@
     "emptyTitle": "Añade palabras a tu diccionario",
     "emptyDescription": "Añade palabras que {{agentName}} siempre debe reconocer: nombres, herramientas, siglas.",
     "addFirstWord": "Añade tu primera palabra",
-    "agentDefault": "Añadido por defecto"
+    "agentDefault": "Añadido por defecto",
+    "corrections": {
+      "title": "Correcciones automáticas",
+      "description": "Arregla las palabras que el modelo de voz siempre escribe mal. Una regla por línea: las formas mal escuchadas separadas por comas, luego => y la escritura correcta. No importan mayúsculas, tildes, espacios ni guiones.",
+      "placeholder": "capcode, cap code => Claude Code\ngleto, cifrao => Cifrato\nfill out => Fillout",
+      "count_one": "{{count}} regla",
+      "count_other": "{{count}} reglas",
+      "invalid_one": "{{count}} línea sin =>",
+      "invalid_other": "{{count}} líneas sin =>",
+      "save": "Guardar",
+      "appContext": "Adaptar la limpieza a la app activa",
+      "appContextDescription": "Envía al modelo de limpieza el nombre de la app donde estás dictando (Slack, Mail, Cursor…) para que ajuste el estilo."
+    }
   },
   "insights": {
     "title": "Estadísticas",

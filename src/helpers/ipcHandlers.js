@@ -1716,7 +1716,8 @@ class IPCHandlers {
       // microphone for seconds (#1944). Its consumers wait for it themselves.
       void this.selectionManager?.captureTarget?.();
       const pid = (await this.textEditMonitor?.captureTargetPid?.()) ?? null;
-      return { success: true, pid };
+      const app = this.textEditMonitor?.lastTargetApp;
+      return { success: true, pid, ...(app ? { app } : {}) };
     });
 
     ipcMain.handle("force-stop-dictation", () => {

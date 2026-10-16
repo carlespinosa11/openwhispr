@@ -15,6 +15,7 @@ const sidecarPidFile = require("./sidecarPidFile");
 const { parseOfflineMessage, createOnlineAccumulator } = require("./parakeetWsResult");
 const { getModelType, getSherpaModelType } = require("./parakeetModelInfo");
 const { pcm16ToFloat32 } = require("../utils/audioUtils");
+const { normalizeHotwords, supportsHotwords, buildHotwordArgs } = require("./sherpaHotwords");
 const {
   computeTranscriptionTimeoutMs,
   TRANSCRIPTION_TIMEOUT_FLOOR_MS,
@@ -59,6 +60,9 @@ class ParakeetWsServer {
     this.startupPromise = null;
     this.startingModelName = null;
     this.startingLanguage = null;
+    // Dictionary hotwords are also part of the server identity.
+    this.hotwordsKey = "";
+    this.startingHotwordsKey = null;
     this.healthCheckInterval = null;
     this.cachedBinaryPaths = {};
   }
@@ -84,33 +88,54 @@ class ParakeetWsServer {
     return this.isAvailable("offline") || this.isAvailable("online");
   }
 
-  async start(modelName, modelDir, runtime = "offline", language = null) {
+  async start(modelName, modelDir, runtime = "offline", language = null, hotwords = []) {
+    const hotwordLines = supportsHotwords({
+      runtime,
+      sherpaModelType: getSherpaModelType(modelName),
+      modelDir,
+    })
+      ? normalizeHotwords(hotwords)
+      : [];
+    const hotwordsKey = hotwordLines.join("\n");
     // Serialize with any in-flight startup; join it only when it's for the same model.
     while (this.startupPromise) {
-      if (this.startingModelName === modelName && this.startingLanguage === language) {
+      if (
+        this.startingModelName === modelName &&
+        this.startingLanguage === language &&
+        this.startingHotwordsKey === hotwordsKey
+      ) {
         return this.startupPromise;
       }
       await this.startupPromise.catch(() => {});
     }
-    if (this.ready && this.modelName === modelName && this.language === language) return;
+    if (
+      this.ready &&
+      this.modelName === modelName &&
+      this.language === language &&
+      this.hotwordsKey === hotwordsKey
+    ) {
+      return;
+    }
 
     this.startingModelName = modelName;
     this.startingLanguage = language;
+    this.startingHotwordsKey = hotwordsKey;
     // Assigned before any await so concurrent callers can never double-spawn.
     this.startupPromise = (async () => {
       try {
         if (this.process) await this.stop();
-        await this._doStart(modelName, modelDir, runtime, language);
+        await this._doStart(modelName, modelDir, runtime, language, hotwordLines);
       } finally {
         this.startupPromise = null;
         this.startingModelName = null;
         this.startingLanguage = null;
+        this.startingHotwordsKey = null;
       }
     })();
     return this.startupPromise;
   }
 
-  async _doStart(modelName, modelDir, runtime, language) {
+  async _doStart(modelName, modelDir, runtime, language, hotwordLines = []) {
     const wsBinary = this.getWsBinaryPath(runtime);
     if (!wsBinary) throw new Error(`sherpa-onnx ${runtime} WS server binary not found`);
     if (!fs.existsSync(modelDir)) throw new Error(`Model directory not found: ${modelDir}`);
@@ -120,6 +145,7 @@ class ParakeetWsServer {
     this.modelDir = modelDir;
     this.modelRuntime = runtime;
     this.language = language;
+    this.hotwordsKey = hotwordLines.join("\n");
 
     const modelArgs =
       getModelType(modelName) === "cohere-transcribe"
@@ -138,6 +164,7 @@ class ParakeetWsServer {
       `--tokens=${path.join(modelDir, "tokens.txt")}`,
       ...modelArgs,
       ...(runtime === "offline" && sherpaModelType ? [`--model-type=${sherpaModelType}`] : []),
+      ...buildHotwordArgs(hotwordLines, modelDir, getSafeTempDir()),
       `--port=${this.port}`,
       ...(runtime === "online"
         ? [
@@ -614,6 +641,7 @@ class ParakeetWsServer {
     this.modelDir = null;
     this.modelRuntime = "offline";
     this.language = null;
+    this.hotwordsKey = "";
   }
 
   getStatus() {

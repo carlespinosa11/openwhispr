@@ -69,6 +69,7 @@ const EXPECTED_SHARED_FIELD_DIRECTIONS = {
   "src/components/SelfHostedPanel.tsx": ["ltr", "ltr"],
   "src/components/SettingsPage.tsx": ["ltr", "ltr", "ltr", "ltr", "ltr", "ltr"],
   "src/components/SnippetsView.tsx": ["auto", "auto", "auto", "auto"],
+  "src/components/TextCorrectionsView.tsx": ["auto"],
   "src/components/TranscriptionModelPicker.tsx": ["ltr", "ltr", "ltr"],
   "src/components/notes/ActionManagerDialog.tsx": ["auto", "auto", "auto"],
   "src/components/notes/DeleteSpaceDialog.tsx": ["auto"],

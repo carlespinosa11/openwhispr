@@ -55,6 +55,7 @@ async function mapWithConcurrency(items, limit, fn) {
 class ParakeetServerManager {
   constructor() {
     this.wsServer = new ParakeetWsServer();
+    this.hotwords = [];
   }
 
   getBinaryPath(runtime) {
@@ -114,6 +115,7 @@ class ParakeetServerManager {
     // signal is optional; only cancellable uploads pass one. Aborting stops
     // scheduling further segments — the in-flight one finishes server-side.
     const { modelName = "parakeet-tdt-0.6b-v3", language, signal } = options;
+    this._rememberHotwords(options.hotwords);
     const throwIfAborted = () => {
       if (signal?.aborted) throw createAbortError("Parakeet transcription cancelled");
     };
@@ -141,7 +143,8 @@ class ParakeetServerManager {
         modelName,
         modelDir,
         runtime,
-        resolveModelLanguage(modelName, language)
+        resolveModelLanguage(modelName, language),
+        this.hotwords
       );
 
       const samples = wavToFloat32Samples(wavBuffer);
@@ -243,7 +246,15 @@ class ParakeetServerManager {
     }
   }
 
-  async startServer(modelName, language) {
+  // Dictation sends the current dictionary; other callers (meetings, uploads,
+  // warm-up) send none and reuse it, so they never restart the server just
+  // to drop the hotwords.
+  _rememberHotwords(hotwords) {
+    if (Array.isArray(hotwords)) this.hotwords = hotwords;
+  }
+
+  async startServer(modelName, language, hotwords) {
+    this._rememberHotwords(hotwords);
     const runtime = getModelRuntime(modelName);
     if (!this.wsServer.isAvailable(runtime)) {
       return { success: false, reason: "parakeet WS server binary not found" };
@@ -259,7 +270,8 @@ class ParakeetServerManager {
         modelName,
         modelDir,
         runtime,
-        resolveModelLanguage(modelName, language)
+        resolveModelLanguage(modelName, language),
+        this.hotwords
       );
       return { success: true, port: this.wsServer.port };
     } catch (error) {

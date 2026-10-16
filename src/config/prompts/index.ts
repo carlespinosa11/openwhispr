@@ -3,6 +3,7 @@ import { useSettingsStore } from "../../stores/settingsStore";
 import { en as enPrompts } from "../../locales/prompts";
 import { getLanguageInstruction } from "../../utils/languageSupport";
 import { PROMPT_KINDS, PLAIN_TEXT_RESPONSE_SUFFIX, type PromptKind } from "./registry";
+import { formatAppContextNote, getDictationAppContext } from "../../utils/dictationAppContext";
 
 export { PROMPT_KINDS, PROMPT_KIND_LIST, type PromptKind } from "./registry";
 
@@ -33,7 +34,8 @@ export function getDefaultPromptText(kind: PromptKind, uiLanguage?: string): str
 // transcript, where models weight instructions most. Mirrors api/reason.ts
 // in openwhispr-api.
 export function wrapCleanupTranscript(text: string): string {
-  return `<transcript>\n${text}\n</transcript>\n\nOutput only the cleaned transcript.`;
+  const appNote = formatAppContextNote(getDictationAppContext());
+  return `${appNote}<transcript>\n${text}\n</transcript>\n\nOutput only the cleaned transcript.`;
 }
 
 // Appended to the dictation-agent prompt only when a screenshot is attached.

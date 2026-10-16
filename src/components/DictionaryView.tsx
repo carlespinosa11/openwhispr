@@ -6,6 +6,7 @@ import {
   NotebookPen,
   PanelRight,
   Pencil,
+  Wand2,
   Plus,
   Sparkles,
   Upload,
@@ -21,6 +22,7 @@ import { ConfirmDialog } from "./ui/dialog";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { useToast } from "./ui/useToast";
 import SnippetsView from "./SnippetsView";
+import TextCorrectionsView from "./TextCorrectionsView";
 import DictionaryEmptyIllustration from "./DictionaryEmptyIllustration";
 import { useSettings } from "../hooks/useSettings";
 import { getAgentName } from "../utils/agentName";
@@ -211,6 +213,10 @@ export default function DictionaryView() {
             <PanelRight size={17} />
             {t("dictionary.tabSnippets")}
           </TabsTrigger>
+          <TabsTrigger value="corrections" variant="pill">
+            <Wand2 size={17} />
+            {t("dictionary.tabCorrections")}
+          </TabsTrigger>
         </TabsList>
       </div>
 
@@ -381,6 +387,10 @@ export default function DictionaryView() {
 
       <TabsContent value="snippets" className="flex-1 min-h-0 mt-0 overflow-y-auto">
         <SnippetsView />
+      </TabsContent>
+
+      <TabsContent value="corrections" className="flex-1 min-h-0 mt-0 overflow-y-auto">
+        <TextCorrectionsView />
       </TabsContent>
     </Tabs>
   );

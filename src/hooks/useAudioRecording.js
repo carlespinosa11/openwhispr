@@ -5,6 +5,7 @@ import logger from "../utils/logger";
 import { playStartCue, playStopCue } from "../utils/dictationCues";
 import { getSettings } from "../stores/settingsStore";
 import { expandSnippets } from "../utils/snippets";
+import { applyTextCorrections } from "../utils/textCorrections";
 import { getRecordingErrorTitle, getRecordingErrorDescription } from "../utils/recordingErrors";
 import { providerErrorActions } from "../utils/describeProviderError";
 import { isAccessibilitySkipped } from "../utils/permissions";
@@ -184,7 +185,8 @@ export const useAudioRecording = (toast, options = {}) => {
         // started from the panel itself as well as from global hotkeys; otherwise
         // paste can reactivate a stale target from the preceding dictation.
         try {
-          await window.electronAPI.captureDictationTarget?.();
+          const target = await window.electronAPI.captureDictationTarget?.();
+          audioManagerRef.current.setDictationApp(target?.app ?? null);
         } catch (error) {
           logger.warn("Failed to refresh dictation target", { error: error?.message });
         }
@@ -649,7 +651,12 @@ export const useAudioRecording = (toast, options = {}) => {
           // expansion is a dictation convenience and can otherwise mutate a
           // legitimate replacement that happens to contain a snippet trigger.
           if (!result.selectionEdit?.sessionId) {
-            result.text = expandSnippets(result.text, getSettings().snippets);
+            // Corrections run again after cleanup in case the model reintroduced a misheard term.
+            const settings = getSettings();
+            result.text = expandSnippets(
+              applyTextCorrections(result.text, settings.textCorrections),
+              settings.snippets
+            );
           }
 
           setTranscript(result.text);

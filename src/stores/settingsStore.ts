@@ -286,6 +286,7 @@ const BOOLEAN_SETTINGS = new Set([
   "telemetryEnabled",
   "audioCuesEnabled",
   "pauseMediaOnDictation",
+  "cleanupAppContext",
   "floatingIconAutoHide",
   "startMinimized",
   "meetingProcessDetection",
@@ -318,6 +319,7 @@ const BOOLEAN_SETTINGS = new Set([
 const ARRAY_SETTINGS = new Set([
   "customDictionary",
   "snippets",
+  "textCorrections",
   "gcalAccounts",
   "mcalAccounts",
   "onboardingUseCases",
@@ -1119,6 +1121,8 @@ export interface SettingsState
   updateCustomDictionary: (changes: { add?: string[]; remove?: string[] }) => void;
   applyCustomDictionaryFromExternal: (words: string[]) => void;
   setSnippets: (snippets: Snippet[]) => void;
+  setTextCorrections: (lines: string[]) => void;
+  setCleanupAppContext: (value: boolean) => void;
   applySnippetsFromExternal: (snippets: Snippet[]) => void;
   setAssemblyAiStreaming: (value: boolean) => void;
   setAutoGenerateNoteTitle: (value: boolean) => void;
@@ -1531,6 +1535,8 @@ export const useSettingsStore = create<SettingsState>()((set, get) => ({
   cortiEnvironment: readString("cortiEnvironment", "us"),
   cortiTenant: readString("cortiTenant", "base"),
   customDictionary: readStringArray("customDictionary", []),
+  textCorrections: readStringArray("textCorrections", []),
+  cleanupAppContext: readBoolean("cleanupAppContext", true),
   snippets: (() => {
     try {
       const parsed = JSON.parse(readString("snippets", "[]"));
@@ -2147,6 +2153,12 @@ export const useSettingsStore = create<SettingsState>()((set, get) => ({
     if (isBrowser) localStorage.setItem("customDictionary", JSON.stringify(words));
     set({ customDictionary: words });
   },
+
+  setTextCorrections: (lines: string[]) => {
+    if (isBrowser) localStorage.setItem("textCorrections", JSON.stringify(lines));
+    set({ textCorrections: lines });
+  },
+  setCleanupAppContext: createBooleanSetter("cleanupAppContext"),
 
   setSnippets: (snippets: Snippet[]) => {
     if (isBrowser) localStorage.setItem("snippets", JSON.stringify(snippets));

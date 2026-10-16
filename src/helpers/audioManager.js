@@ -145,6 +145,8 @@ import {
   usesTranscriptionKeywords,
 } from "../utils/dictionaryKeywords.js";
 import { getDictionaryHintWords } from "../utils/snippets";
+import { applyTextCorrections } from "../utils/textCorrections";
+import { setDictationAppContext } from "../utils/dictationAppContext";
 import { normalizeAgentSelectionContext } from "../utils/agentSelectionContext";
 import { getAgentName } from "../utils/agentName";
 import { shouldDisplayDictationPreview } from "../utils/transcriptionPreview";
@@ -990,6 +992,11 @@ registerProcessor("pcm-streaming-processor", PCMStreamingProcessor);
   setTranslationRequested(requested) {
     this.translationRequested = requested;
     this.translationApplied = false;
+  }
+
+  // { name, bundleId } of the app the dictation will be pasted into (macOS).
+  setDictationApp(app) {
+    this.dictationApp = app || null;
   }
 
   // In translation mode the STT hint is the configured source language, not
@@ -2545,6 +2552,8 @@ registerProcessor("pcm-streaming-processor", PCMStreamingProcessor);
         result = await window.electronAPI.transcribeLocalParakeet(arrayBuffer, {
           model,
           language: getBaseLanguageCode(this.getEffectiveSttLanguage(getSettings())),
+          // Transducer models (Orukeet, Parakeet) bias decoding toward these.
+          hotwords: getDictionaryHintWords(getSettings()),
         });
         timings.transcriptionProcessingDurationMs = Math.round(
           performance.now() - transcriptionStart
@@ -3251,13 +3260,22 @@ registerProcessor("pcm-streaming-processor", PCMStreamingProcessor);
   }
 
   async processTranscription(text, source, wasCancelled = neverCancelled) {
-    const result = await this.processTranscriptionCore(text, source, wasCancelled);
-    if (wasCancelled()) return result;
-    return this.finalizeChineseScript(result);
+    setDictationAppContext(getSettings().cleanupAppContext ? this.dictationApp : null);
+    try {
+      const result = await this.processTranscriptionCore(text, source, wasCancelled);
+      if (wasCancelled()) return result;
+      return this.finalizeChineseScript(result);
+    } finally {
+      setDictationAppContext(null);
+    }
   }
 
   async processTranscriptionCore(text, source, wasCancelled = neverCancelled) {
-    const normalizedText = typeof text === "string" ? text.trim() : "";
+    // Corrections run before cleanup so the model sees the intended terms.
+    const normalizedText =
+      typeof text === "string"
+        ? applyTextCorrections(text.trim(), getSettings().textCorrections)
+        : "";
 
     if (!normalizedText) {
       logger.logReasoning("TRANSCRIPTION_EMPTY_SKIPPING_REASONING", {

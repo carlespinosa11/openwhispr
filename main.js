@@ -1403,6 +1403,15 @@ async function startApp() {
     localTranscriptionProvider: process.env.LOCAL_TRANSCRIPTION_PROVIDER || "",
     parakeetModel: process.env.PARAKEET_MODEL,
     language: process.env.DICTATION_LANGUAGE,
+    // Best-effort: the first dictation sends the full hint list (with snippets
+    // and corrections) and restarts the server only if it differs.
+    hotwords: (() => {
+      try {
+        return databaseManager?.getDictionary() ?? [];
+      } catch {
+        return [];
+      }
+    })(),
   };
   parakeetManager.initializeAtStartup(parakeetSettings).catch((err) => {
     debugLogger.debug("Parakeet startup init error (non-fatal)", { error: err.message });

@@ -1439,7 +1439,11 @@ declare global {
       hideWindow: () => Promise<void>;
       showDictationPanel: () => Promise<void>;
       openSettingsSection?: (section: ProviderSettingsTarget) => Promise<{ success: boolean }>;
-      captureDictationTarget?: () => Promise<{ success: boolean; pid: number | null }>;
+      captureDictationTarget?: () => Promise<{
+        success: boolean;
+        pid: number | null;
+        app?: { name?: string; bundleId?: string } | null;
+      }>;
       onToggleDictation: (callback: () => void) => () => void;
       onToggleVoiceAgent?: (callback: () => void) => () => void;
       onToggleTranslation?: (callback: () => void) => () => void;
@@ -2068,7 +2072,7 @@ declare global {
       // Parakeet operations (NVIDIA via sherpa-onnx)
       transcribeLocalParakeet: (
         audioBlob: ArrayBuffer,
-        options?: { model?: string; language?: string }
+        options?: { model?: string; language?: string; hotwords?: string[] }
       ) => Promise<ParakeetTranscriptionResult>;
       checkParakeetInstallation: () => Promise<ParakeetCheckResult>;
       downloadParakeetModel: (modelName: string) => Promise<ParakeetModelResult>;

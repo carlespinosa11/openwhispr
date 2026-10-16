@@ -3495,6 +3495,7 @@
     "noMatches": "Совпадений нет — нажмите Enter, чтобы добавить «{{word}}»",
     "tabDictionary": "Словарь",
     "tabSnippets": "Сниппеты",
+    "tabCorrections": "Corrections",
     "snippets": {
       "title": "Сниппеты",
       "edit": "Изменить {{trigger}}",
@@ -3522,7 +3523,23 @@
     "emptyTitle": "Добавьте слова в словарь",
     "emptyDescription": "Добавьте слова, которые {{agentName}} всегда должен распознавать: имена, инструменты, аббревиатуры.",
     "addFirstWord": "Добавьте первое слово",
-    "agentDefault": "Добавлено по умолчанию"
+    "agentDefault": "Добавлено по умолчанию",
+    "corrections": {
+      "title": "Automatic corrections",
+      "description": "Fix words the speech model keeps getting wrong. One rule per line: misheard forms separated by commas, then => and the right spelling. Matching ignores case, accents, spaces and hyphens.",
+      "placeholder": "capcode, cap code => Claude Code\ngleto, cifrao => Cifrato\nfill out => Fillout",
+      "count_one": "{{count}} rule",
+      "count_few": "{{count}} rules",
+      "count_many": "{{count}} rules",
+      "count_other": "{{count}} rules",
+      "invalid_one": "{{count}} line without =>",
+      "invalid_few": "{{count}} lines without =>",
+      "invalid_many": "{{count}} lines without =>",
+      "invalid_other": "{{count}} lines without =>",
+      "save": "Save",
+      "appContext": "Adapt cleanup to the active app",
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+    }
   },
   "insights": {
     "title": "Статистика",

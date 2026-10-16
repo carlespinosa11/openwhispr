@@ -3397,6 +3397,7 @@
     "noMatches": "一致なし — Enter キーで「{{word}}」を追加",
     "tabDictionary": "辞書",
     "tabSnippets": "スニペット",
+    "tabCorrections": "Corrections",
     "snippets": {
       "title": "スニペット",
       "edit": "{{trigger}}を編集",
@@ -3424,7 +3425,19 @@
     "emptyTitle": "辞書に単語を追加しましょう",
     "emptyDescription": "{{agentName}}に正しく認識してほしい言葉を追加しましょう。名前、ツール、略語など。",
     "addFirstWord": "最初の単語を追加",
-    "agentDefault": "デフォルトで追加済み"
+    "agentDefault": "デフォルトで追加済み",
+    "corrections": {
+      "title": "Automatic corrections",
+      "description": "Fix words the speech model keeps getting wrong. One rule per line: misheard forms separated by commas, then => and the right spelling. Matching ignores case, accents, spaces and hyphens.",
+      "placeholder": "capcode, cap code => Claude Code\ngleto, cifrao => Cifrato\nfill out => Fillout",
+      "count_other": "{{count}} rules",
+      "count_one": "{{count}} rule",
+      "invalid_other": "{{count}} lines without =>",
+      "invalid_one": "{{count}} line without =>",
+      "save": "Save",
+      "appContext": "Adapt cleanup to the active app",
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+    }
   },
   "referral": {
     "title": "紹介して特典をゲット",

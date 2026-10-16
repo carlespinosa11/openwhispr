@@ -92,7 +92,7 @@ class ParakeetManager {
 
       await this.logDependencyStatus();
 
-      const { localTranscriptionProvider, parakeetModel, language } = settings;
+      const { localTranscriptionProvider, parakeetModel, language, hotwords } = settings;
       const capability = getParakeetCapability();
 
       if (
@@ -106,7 +106,7 @@ class ParakeetManager {
 
           try {
             const serverStartTime = Date.now();
-            await this.serverManager.startServer(parakeetModel, language);
+            await this.serverManager.startServer(parakeetModel, language, hotwords);
             debugLogger.info("Parakeet server pre-warmed successfully", {
               model: parakeetModel,
               startupTimeMs: Date.now() - serverStartTime,
@@ -281,6 +281,7 @@ class ParakeetManager {
     const result = await this.serverManager.transcribe(audioBuffer, {
       modelName: model,
       language: options.language,
+      hotwords: options.hotwords,
       signal: options.signal,
     });
     const elapsed = Date.now() - startTime;

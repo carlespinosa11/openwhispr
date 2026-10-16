@@ -1,3 +1,5 @@
+import { getCorrectionTargets } from "./textCorrections";
+
 export interface Snippet {
   trigger: string;
   replacement: string;
@@ -124,11 +126,18 @@ export function getDictionaryHintWords(
   settings?: {
     customDictionary?: string[] | null;
     snippets?: Snippet[] | null;
+    textCorrections?: string[] | null;
   } | null
 ): string[] {
-  const dictionary = Array.isArray(settings?.customDictionary) ? settings.customDictionary : [];
+  const dictionary = [
+    ...(Array.isArray(settings?.customDictionary) ? settings.customDictionary : []),
+    // Only the corrected spelling is a hint; the misheard form must not bias the models.
+    ...getCorrectionTargets(settings?.textCorrections).filter(
+      (t) => !settings?.customDictionary?.includes(t)
+    ),
+  ];
   const snippets = Array.isArray(settings?.snippets) ? settings.snippets : [];
-  if (snippets.length === 0) return [...dictionary];
+  if (snippets.length === 0) return dictionary;
 
   const triggers = snippets
     .map((s) => s?.trigger)

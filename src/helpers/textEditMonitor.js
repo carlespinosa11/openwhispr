@@ -90,6 +90,8 @@ class TextEditMonitor extends EventEmitter {
     this._lastValue = null;
     this._stdoutBuffer = "";
     this.lastTargetPid = null;
+    // { name, bundleId } of the app the dictation targets; feeds cleanup context.
+    this.lastTargetApp = null;
     this._captureTargetPromise = null;
     this._lastCaptureAt = 0;
     this._windowBounds = null;
@@ -121,11 +123,15 @@ class TextEditMonitor extends EventEmitter {
       return Promise.resolve(this.lastTargetPid);
     }
     this.lastTargetPid = null;
+    this.lastTargetApp = null;
     this._captureTargetPromise = this._readFrontmostPid().then((pid) => {
+      const app = pid !== null && this._lastReadApp?.pid === pid ? this._lastReadApp : null;
       this._captureTargetPromise = null;
       this._lastCaptureAt = Date.now();
       this.lastTargetPid = pid;
-      debugLogger.debug("[TextEditMonitor] Captured target PID", { pid });
+      this.lastTargetApp =
+        app && (app.name || app.bundleId) ? { name: app.name, bundleId: app.bundleId } : null;
+      debugLogger.debug("[TextEditMonitor] Captured target", { pid, app: this.lastTargetApp });
       return pid;
     });
     return this._captureTargetPromise;
@@ -134,21 +140,39 @@ class TextEditMonitor extends EventEmitter {
   /**
    * macOS: resolve the frontmost app's PID, or null if it can't be read.
    */
+  // The name and bundle ID read alongside the PID are kept for captureTargetPid.
   _readFrontmostPid() {
+    return this._readFrontmostApp().then((app) => {
+      this._lastReadApp = app;
+      return app?.pid ?? null;
+    });
+  }
+
+  /**
+   * macOS: the frontmost app's PID, localized name and bundle ID in one
+   * osascript spawn, or null if it can't be read.
+   */
+  _readFrontmostApp() {
     return new Promise((resolve) => {
       if (process.platform !== "darwin") {
         resolve(null);
         return;
       }
       const script =
-        'ObjC.import("AppKit"); $.NSWorkspace.sharedWorkspace.frontmostApplication.processIdentifier';
+        'ObjC.import("AppKit"); var a = $.NSWorkspace.sharedWorkspace.frontmostApplication; ' +
+        '[a.processIdentifier, ObjC.unwrap(a.localizedName) || "", ObjC.unwrap(a.bundleIdentifier) || ""].join("\\t")';
       execFile(
         "osascript",
         ["-l", "JavaScript", "-e", script],
         { timeout: 2000 },
         (err, stdout) => {
-          const pid = err ? NaN : parseInt(stdout.trim(), 10);
-          resolve(isNaN(pid) ? null : pid);
+          if (err) {
+            resolve(null);
+            return;
+          }
+          const [pidText, name = "", bundleId = ""] = stdout.trim().split("\t");
+          const pid = parseInt(pidText, 10);
+          resolve(isNaN(pid) ? null : { pid, name: name.trim(), bundleId: bundleId.trim() });
         }
       );
     });

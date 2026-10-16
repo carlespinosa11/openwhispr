@@ -1375,6 +1375,7 @@
     "noMatches": "لا توجد تطابقات — اضغط على Enter لإضافة \"{{word}}\"",
     "tabDictionary": "القاموس",
     "tabSnippets": "المقتطفات",
+    "tabCorrections": "Corrections",
     "snippets": {
       "title": "المقتطفات",
       "edit": "تعديل {{trigger}}",
@@ -1403,7 +1404,27 @@
     "emptyDescription": "أضف الكلمات التي يجب أن يكتبها {{agentName}} بشكل صحيح دائمًا: الأسماء، الأدوات، الاختصارات.",
     "addFirstWord": "أضف كلمتك الأولى",
     "agentDefault": "تمت الإضافة افتراضيًا",
-    "promptLimitNotice": "عدد أحرف قاموسك: {{chars}}. لا تقرأ نماذج Groq وWhisper سوى بضع مئات من الأحرف الأخيرة منه، لذا تعمل القوائم الأقصر بشكل أفضل معها. أما النماذج الأخرى فتحصل على القائمة كاملة."
+    "promptLimitNotice": "عدد أحرف قاموسك: {{chars}}. لا تقرأ نماذج Groq وWhisper سوى بضع مئات من الأحرف الأخيرة منه، لذا تعمل القوائم الأقصر بشكل أفضل معها. أما النماذج الأخرى فتحصل على القائمة كاملة.",
+    "corrections": {
+      "title": "Automatic corrections",
+      "description": "Fix words the speech model keeps getting wrong. One rule per line: misheard forms separated by commas, then => and the right spelling. Matching ignores case, accents, spaces and hyphens.",
+      "placeholder": "capcode, cap code => Claude Code\ngleto, cifrao => Cifrato\nfill out => Fillout",
+      "count_zero": "{{count}} rules",
+      "count_one": "{{count}} rule",
+      "count_two": "{{count}} rules",
+      "count_few": "{{count}} rules",
+      "count_many": "{{count}} rules",
+      "count_other": "{{count}} rules",
+      "invalid_zero": "{{count}} lines without =>",
+      "invalid_one": "{{count}} line without =>",
+      "invalid_two": "{{count}} lines without =>",
+      "invalid_few": "{{count}} lines without =>",
+      "invalid_many": "{{count}} lines without =>",
+      "invalid_other": "{{count}} lines without =>",
+      "save": "Save",
+      "appContext": "Adapt cleanup to the active app",
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+    }
   },
   "promptStudio": {
     "common": {

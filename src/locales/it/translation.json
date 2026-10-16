@@ -3469,6 +3469,7 @@
     "noMatches": "Nessuna corrispondenza — premi Invio per aggiungere \"{{word}}\"",
     "tabDictionary": "Dizionario",
     "tabSnippets": "Snippet",
+    "tabCorrections": "Corrections",
     "snippets": {
       "title": "Snippet",
       "edit": "Modifica {{trigger}}",
@@ -3496,7 +3497,19 @@
     "emptyTitle": "Aggiungi parole al tuo dizionario",
     "emptyDescription": "Aggiungi le parole che {{agentName}} deve sempre riconoscere: nomi, strumenti, acronimi.",
     "addFirstWord": "Aggiungi la tua prima parola",
-    "agentDefault": "Aggiunto di default"
+    "agentDefault": "Aggiunto di default",
+    "corrections": {
+      "title": "Automatic corrections",
+      "description": "Fix words the speech model keeps getting wrong. One rule per line: misheard forms separated by commas, then => and the right spelling. Matching ignores case, accents, spaces and hyphens.",
+      "placeholder": "capcode, cap code => Claude Code\ngleto, cifrao => Cifrato\nfill out => Fillout",
+      "count_one": "{{count}} rule",
+      "count_other": "{{count}} rules",
+      "invalid_one": "{{count}} line without =>",
+      "invalid_other": "{{count}} lines without =>",
+      "save": "Save",
+      "appContext": "Adapt cleanup to the active app",
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+    }
   },
   "insights": {
     "title": "Statistiche",

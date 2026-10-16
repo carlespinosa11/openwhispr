@@ -3469,6 +3469,7 @@
     "noMatches": "無相符項目 — 按 Enter 新增「{{word}}」",
     "tabDictionary": "字典",
     "tabSnippets": "片段",
+    "tabCorrections": "Corrections",
     "snippets": {
       "title": "片段",
       "edit": "編輯 {{trigger}}",
@@ -3496,7 +3497,19 @@
     "emptyTitle": "將詞語加入字典",
     "emptyDescription": "新增希望{{agentName}}始終辨識正確的詞：名字、工具、縮寫。",
     "addFirstWord": "新增第一個詞",
-    "agentDefault": "預設加入"
+    "agentDefault": "預設加入",
+    "corrections": {
+      "title": "Automatic corrections",
+      "description": "Fix words the speech model keeps getting wrong. One rule per line: misheard forms separated by commas, then => and the right spelling. Matching ignores case, accents, spaces and hyphens.",
+      "placeholder": "capcode, cap code => Claude Code\ngleto, cifrao => Cifrato\nfill out => Fillout",
+      "count_other": "{{count}} rules",
+      "count_one": "{{count}} rule",
+      "invalid_other": "{{count}} lines without =>",
+      "invalid_one": "{{count}} line without =>",
+      "save": "Save",
+      "appContext": "Adapt cleanup to the active app",
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+    }
   },
   "insights": {
     "title": "統計",
