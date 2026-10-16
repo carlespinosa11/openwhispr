@@ -4,7 +4,7 @@
       "sectionTitle": "Language",
       "sectionDescription": "Set interface and transcription languages independently",
       "uiLabel": "Interface language",
-      "uiDescription": "Choose the language used throughout OpenWhispr's interface",
+      "uiDescription": "Choose the language used throughout Char Wispr's interface",
       "transcriptionLabel": "Transcription language",
       "transcriptionDescription": "Choose the language you speak for more accurate transcription",
       "chineseScriptLabel": "Chinese script (dictation)",
@@ -64,12 +64,12 @@
     },
     "openControlPanel": "Open Control Panel",
     "hideControlPanel": "Hide Control Panel",
-    "quit": "Quit OpenWhispr",
-    "tooltip": "OpenWhispr - Voice Dictation"
+    "quit": "Quit Char Wispr",
+    "tooltip": "Char Wispr - Voice Dictation"
   },
   "menu": {
-    "appLabel": "OpenWhispr",
-    "quit": "Quit OpenWhispr",
+    "appLabel": "Char Wispr",
+    "quit": "Quit Char Wispr",
     "speech": "Speech",
     "settings": "Settings...",
     "help": "Help",
@@ -87,8 +87,8 @@
       "message": "Failed to open the link in your browser:\n{{url}}\n\nError: {{error}}"
     },
     "loadFailure": {
-      "title": "OpenWhispr failed to load",
-      "message": "OpenWhispr could not load its UI.",
+      "title": "Char Wispr failed to load",
+      "message": "Char Wispr could not load its UI.",
       "detail": {
         "window": "Window: {{windowName}}",
         "error": "Error {{errorCode}}: {{errorDescription}}",
@@ -99,17 +99,17 @@
   },
   "startup": {
     "error": {
-      "title": "OpenWhispr Startup Error",
+      "title": "Char Wispr Startup Error",
       "message": "Failed to start the application:\n\n{{error}}\n\nPlease report this issue."
     },
     "globeHotkey": {
       "title": "Globe Hotkey Unavailable",
-      "message": "OpenWhispr could not activate the Globe key hotkey.",
+      "message": "Char Wispr could not activate the Globe key hotkey.",
       "details": {
         "unknown": "Unknown error occurred while starting the Globe listener.",
         "fallback": "The Globe key shortcut will remain disabled; existing keyboard shortcuts continue to work.",
         "devHint": "Run `npm run compile:globe` and rebuild the app to regenerate the listener binary.",
-        "reinstallHint": "Try reinstalling OpenWhispr or contact support if the issue persists."
+        "reinstallHint": "Try reinstalling Char Wispr or contact support if the issue persists."
       }
     }
   },
@@ -162,7 +162,7 @@
     "close": "Close"
   },
   "windows": {
-    "pttUnavailable": "OpenWhispr's key listener isn't available."
+    "pttUnavailable": "Char Wispr's key listener isn't available."
   },
   "common": {
     "continue": "Continue",
@@ -218,7 +218,7 @@
   "onboarding": {
     "rehaul": {
       "permissions": {
-        "title": "Set up OpenWhispr in 3 minutes",
+        "title": "Set up Char Wispr in 3 minutes",
         "microphoneDescription": "Listens only while you record.",
         "accessibilityDescription": "Pastes text into any app.",
         "systemAudioTitle": "System Audio",
@@ -231,7 +231,7 @@
         "title": "Which languages do you speak?",
         "titleLineOne": "Which languages",
         "titleLineTwo": "do you speak?",
-        "description": "Select all that apply. This helps OpenWhispr recognize language switches more accurately."
+        "description": "Select all that apply. This helps Char Wispr recognize language switches more accurately."
       },
       "dictationHotkey": {
         "title": "Choose your dictation shortcut",
@@ -241,10 +241,10 @@
         "activation": "Tap or hold?"
       },
       "assistantHotkey": {
-        "title": "Set up OpenWhispr Assistant",
+        "title": "Set up Char Wispr Assistant",
         "titleLineOne": "Set up",
-        "titleLineTwo": "OpenWhispr Assistant",
-        "description": "Speak a request. OpenWhispr Assistant writes the result for you."
+        "titleLineTwo": "Char Wispr Assistant",
+        "description": "Speak a request. Char Wispr Assistant writes the result for you."
       },
       "hotkey": {
         "capture": "Press the key you want to use",
@@ -256,15 +256,15 @@
         "title": "Try your first dictation",
         "titleLineOne": "Try your",
         "titleLineTwo": "first dictation",
-        "description": "Press {{hotkey}} and start speaking. OpenWhispr will turn your voice into text.",
-        "founder": "Hey, I’m Gabe, the founder. Thanks for trying OpenWhispr!",
-        "prompt": "Click the box below, press your shortcut, and tell me: what would you love OpenWhispr to do for you?",
-        "placeholder": "Click here, then press your shortcut. OpenWhispr types into any text box."
+        "description": "Press {{hotkey}} and start speaking. Char Wispr will turn your voice into text.",
+        "founder": "Hey, I’m Gabe, the founder. Thanks for trying Char Wispr!",
+        "prompt": "Click the box below, press your shortcut, and tell me: what would you love Char Wispr to do for you?",
+        "placeholder": "Click here, then press your shortcut. Char Wispr types into any text box."
       },
       "assistantDemo": {
-        "title": "Meet OpenWhispr Assistant",
+        "title": "Meet Char Wispr Assistant",
         "titleLineOne": "Meet",
-        "titleLineTwo": "OpenWhispr Assistant",
+        "titleLineTwo": "Char Wispr Assistant",
         "email": {
           "subject": "Coffee next week?",
           "senderName": "Maria Alvarez",
@@ -298,13 +298,13 @@
         "typing": "Typing…"
       },
       "notes": {
-        "title": "Record meetings without a bot with OpenWhispr Notes",
+        "title": "Record meetings without a bot with Char Wispr Notes",
         "titleLineOne": "Record meetings without a bot",
-        "titleLineTwoPrefix": "with OpenWhispr",
+        "titleLineTwoPrefix": "with Char Wispr",
         "titleLineTwoBrand": "Notes",
-        "description": "OpenWhispr turns your conversation into clear notes. No meeting bot joins your call.",
+        "description": "Char Wispr turns your conversation into clear notes. No meeting bot joins your call.",
         "hero": {
-          "description": "Record your meeting and let OpenWhispr turn the conversation into clear, organized notes.",
+          "description": "Record your meeting and let Char Wispr turn the conversation into clear, organized notes.",
           "chat": "Chat with your meeting notes",
           "transcript": "Review the full transcript",
           "speakers": "See who said what"
@@ -320,9 +320,9 @@
         }
       },
       "setupChoice": {
-        "title": "Choose your OpenWhispr setup",
+        "title": "Choose your Char Wispr setup",
         "titleLineOne": "Choose your",
-        "titleLineTwo": "OpenWhispr setup",
+        "titleLineTwo": "Char Wispr setup",
         "description": "Pick the option that fits how you work.",
         "unavailable": {
           "title": "No setup option is available",
@@ -477,14 +477,14 @@
       "accessibilityTitle": "Accessibility",
       "accessibilityDescription": "Types the finished text straight into whatever app you're in — docs, email, chat.",
       "testAndGrant": "Test & Grant",
-      "requiredForApp": "Required for OpenWhispr to work",
+      "requiredForApp": "Required for Char Wispr to work",
       "microphoneRequired": "Microphone access required",
       "openSystemSettings": "Open System Settings",
       "systemAudioTitle": "System Audio",
       "systemAudioDescription": "Lets the meeting recorder hear the other side of your calls — meetings, lectures, podcasts. You can turn this on later in Settings.",
       "optional": "Optional",
       "recommended": "Recommended",
-      "accessibilityTroubleshooting": "In System Settings → Accessibility, switch OpenWhispr's toggle off and back on. If OpenWhispr isn't in the list at all, click + and add it from your Applications folder. Still stuck? Email support@openwhispr.com."
+      "accessibilityTroubleshooting": "In System Settings → Accessibility, switch Char Wispr's toggle off and back on. If Char Wispr isn't in the list at all, click + and add it from your Applications folder. Still stuck? Email support@openwhispr.com."
     },
     "transcription": {
       "title": "Transcription Setup",
@@ -510,9 +510,9 @@
       "continue": "Continue anyway"
     },
     "useCase": {
-      "title": "How will you use OpenWhispr?",
+      "title": "How will you use Char Wispr?",
       "titleLineOne": "How will you",
-      "titleLineTwo": "use OpenWhispr?",
+      "titleLineTwo": "use Char Wispr?",
       "description": "Choose all that apply. We’ll tailor your setup.",
       "noteLabel": "Anything else you'd like us to know?",
       "notePlaceholder": "Tell us how you plan to use OpenWhispr (Optional)",
@@ -548,7 +548,7 @@
     "meeting": {
       "title": "Meeting notes",
       "description": "Capture and summarize your meetings",
-      "autoDetect": "OpenWhispr automatically detects when you're in a meeting and offers to start notes — nothing is recorded without you.",
+      "autoDetect": "Char Wispr automatically detects when you're in a meeting and offers to start notes — nothing is recorded without you.",
       "hotkeyLabel": "Meeting hotkey",
       "hotkeyHint": "Optional — press it in any meeting to start a note instantly."
     },
@@ -589,14 +589,14 @@
       "return": "Return to onboarding",
       "missingApp": "Or use + to select the app",
       "failed": "Could not check access.",
-      "microphone": "Turn on OpenWhispr in Microphone.",
-      "accessibility": "Drag OpenWhispr into Accessibility, then turn it on.",
-      "systemAudio": "Turn on OpenWhispr under System Audio Recording Only.",
-      "screenContext": "Drag OpenWhispr into Screen & System Audio Recording, then turn it on.",
+      "microphone": "Turn on Char Wispr in Microphone.",
+      "accessibility": "Drag Char Wispr into Accessibility, then turn it on.",
+      "systemAudio": "Turn on Char Wispr under System Audio Recording Only.",
+      "screenContext": "Drag Char Wispr into Screen & System Audio Recording, then turn it on.",
       "settings": "Open Settings",
       "check": "Check again",
-      "restart": "Restart OpenWhispr",
-      "restartRequired": "Restart OpenWhispr to apply screen access."
+      "restart": "Restart Char Wispr",
+      "restartRequired": "Restart Char Wispr to apply screen access."
     }
   },
   "streaming": {
@@ -615,13 +615,13 @@
   "controlPanel": {
     "updateRequiredByOrg": {
       "title": "Update required",
-      "description": "Your organization requires OpenWhispr {{version}} or newer. Please update the app."
+      "description": "Your organization requires Char Wispr {{version}} or newer. Please update the app."
     },
     "update": {
       "readyTitle": "Update ready to install",
       "readyDescription": "Click 'Install Update' to restart with the latest version.",
       "installTitle": "Install Update",
-      "installDescription": "OpenWhispr will restart to apply the update. Any in-progress work will be saved.",
+      "installDescription": "Char Wispr will restart to apply the update. Any in-progress work will be saved.",
       "couldNotInstallTitle": "Couldn't install update",
       "couldNotInstallDescription": "Something went wrong. Please try again.",
       "couldNotDownloadTitle": "Couldn't download update",
@@ -636,7 +636,7 @@
     },
     "accessibilityMissing": {
       "title": "Accessibility permissions needed",
-      "description": "We've detected that OpenWhispr needs accessibility permissions to work properly. Please enable them below."
+      "description": "We've detected that Char Wispr needs accessibility permissions to work properly. Please enable them below."
     },
     "billing": {
       "pastDueTitle": "We couldn't process your payment",
@@ -824,7 +824,7 @@
           "modelNotFound": "AWS Bedrock could not find the selected model in region {{region}}. Check the model ID and whether it is available in that region.",
           "configurationRejected": "AWS Bedrock rejected the model configuration for region {{region}}. Check the model ID, inference profile, and region.",
           "notConfigured": "AWS Bedrock is not configured correctly. Check the region and AWS credentials.",
-          "serviceUnavailable": "AWS Bedrock is temporarily unavailable due to high demand. This is an AWS service issue, not an OpenWhispr outage. Please try again in a few minutes.",
+          "serviceUnavailable": "AWS Bedrock is temporarily unavailable due to high demand. This is an AWS service issue, not an Char Wispr outage. Please try again in a few minutes.",
           "throttled": "AWS Bedrock is temporarily limiting requests because it is receiving too many. Please wait a moment and try again. If this continues, ask your AWS administrator to check your Bedrock usage and quotas.",
           "timeout": "AWS Bedrock did not respond in time. Please try again. If this continues, check your internet connection and AWS Bedrock service status.",
           "network": "AWS Bedrock could not be reached. Check your internet connection and try again.",
@@ -968,24 +968,24 @@
       },
       "selectionEditing": {
         "notAppliedTitle": "Selection edit not applied",
-        "changed": "The selected text or target app changed while OpenWhispr was processing. Nothing was replaced.",
+        "changed": "The selected text or target app changed while Char Wispr was processing. Nothing was replaced.",
         "expired": "The selection edit took too long and expired. Select the text and try again.",
-        "pasteFailed": "OpenWhispr generated the edit but could not replace the selected text.",
-        "modifiersHeld": "OpenWhispr generated the edit, but a modifier key (like Ctrl or Shift) was still held down, so it was not applied. The edit is on the clipboard.",
-        "modifiersHeldClipboardFailed": "OpenWhispr generated the edit, but a modifier key (like Ctrl or Shift) was still held down, so it was not applied, and it could not be copied to the clipboard either.",
-        "unavailable": "OpenWhispr could not safely read the selected text. Check accessibility or input automation permissions and try again.",
+        "pasteFailed": "Char Wispr generated the edit but could not replace the selected text.",
+        "modifiersHeld": "Char Wispr generated the edit, but a modifier key (like Ctrl or Shift) was still held down, so it was not applied. The edit is on the clipboard.",
+        "modifiersHeldClipboardFailed": "Char Wispr generated the edit, but a modifier key (like Ctrl or Shift) was still held down, so it was not applied, and it could not be copied to the clipboard either.",
+        "unavailable": "Char Wispr could not safely read the selected text. Check accessibility or input automation permissions and try again.",
         "tooLarge": "The selection is too large to edit safely. Select 6,000 characters or fewer.",
         "reasoningFailed": "The AI could not complete the selection edit. Your original text was not changed.",
         "invalidResponse": "The AI returned an invalid edit response. Nothing was replaced. Select the text and try again.",
         "emptyResponse": "The AI returned an empty edit. Nothing was replaced. Try a more specific instruction.",
         "truncatedResponse": "The AI stopped before completing the edit. Nothing was replaced. Try selecting less text.",
-        "wlCopyMissing": "OpenWhispr generated the edit, but on this desktop Wayland apps can only read pasted text through wl-copy. Install wl-clipboard to apply edits.",
-        "wlCopyFailed": "OpenWhispr generated the edit, but wl-copy couldn't copy it for Wayland apps, so it wasn't applied."
+        "wlCopyMissing": "Char Wispr generated the edit, but on this desktop Wayland apps can only read pasted text through wl-copy. Install wl-clipboard to apply edits.",
+        "wlCopyFailed": "Char Wispr generated the edit, but wl-copy couldn't copy it for Wayland apps, so it wasn't applied."
       },
       "pastePermission": {
         "title": "Allow automatic pasting",
-        "description": "Enable OpenWhispr in System Settings → Privacy & Security → Accessibility.",
-        "settingsFailed": "Couldn't open Settings. Open System Settings → Privacy & Security → Accessibility and enable OpenWhispr.",
+        "description": "Enable Char Wispr in System Settings → Privacy & Security → Accessibility.",
+        "settingsFailed": "Couldn't open Settings. Open System Settings → Privacy & Security → Accessibility and enable Char Wispr.",
         "manualPaste": "Copy your text below, then press {{shortcut}} to paste it.",
         "openSettings": "Open Settings",
         "copyToClipboard": "Copy to clipboard",
@@ -994,7 +994,7 @@
       "pasteFailed": {
         "title": "Couldn't paste automatically"
       },
-      "interruptedRecordingRecovered": "Recovered after OpenWhispr closed before this dictation finished.",
+      "interruptedRecordingRecovered": "Recovered after Char Wispr closed before this dictation finished.",
       "waylandClipboard": {
         "title": "Transcription not pasted",
         "wlCopyMissing": "On this desktop, Wayland apps can only read pasted text through wl-copy. Install wl-clipboard to paste your dictations.",
@@ -1071,7 +1071,7 @@
       "micErrors": {
         "accessFailed": "Microphone access failed. Please try again.",
         "noMicrophones": "No microphones were detected. Connect or select a microphone in {{settingsPath}}.",
-        "permissionDenied": "Permission was denied. Open {{privacyPath}} and allow OpenWhispr.",
+        "permissionDenied": "Permission was denied. Open {{privacyPath}} and allow Char Wispr.",
         "couldNotStart": "Could not start the selected microphone. Choose an input device in {{settingsPath}}, then rerun the test.",
         "noActiveInput": "No active audio input was found. Pick a microphone in {{settingsPath}}.",
         "unknown": "Microphone access failed: {{error}}. Select a different input device and try again.",
@@ -1100,8 +1100,8 @@
         "accessibilityNeeded": "Please grant accessibility permissions in System Settings to enable automatic text pasting.",
         "windowsReady": "Windows does not require special permissions for automatic pasting. You're all set!",
         "linuxReadyWithMethod": "Automatic pasting is available using {{method}}. You are all set!",
-        "waylandClipboardMode": "Automatic pasting is not available on this Wayland session. OpenWhispr will copy text to your clipboard and you can paste with Ctrl+V.",
-        "optionalPasteTool": "For automatic pasting, install {{tool}}:\n\n{{installCmd}}{{waylandNote}}\n\nWithout this, you can still use OpenWhispr - text will be copied to your clipboard and you can paste with Ctrl+V."
+        "waylandClipboardMode": "Automatic pasting is not available on this Wayland session. Char Wispr will copy text to your clipboard and you can paste with Ctrl+V.",
+        "optionalPasteTool": "For automatic pasting, install {{tool}}:\n\n{{installCmd}}{{waylandNote}}\n\nWithout this, you can still use Char Wispr - text will be copied to your clipboard and you can paste with Ctrl+V."
       },
       "alerts": {
         "accessibilityNeeded": "Accessibility permissions needed! Please grant them in System Settings."
@@ -1114,7 +1114,7 @@
         "defaultPasteTool": "xdotool",
         "xdotoolXwayland": "xdotool (XWayland apps)"
       },
-      "accessibilityTestText": "OpenWhispr accessibility test",
+      "accessibilityTestText": "Char Wispr accessibility test",
       "warning": {
         "messages": {
           "macos": "Check Sound settings to select your input device",
@@ -1191,7 +1191,7 @@
       "emailRequired": "Enter your work email to use SSO.",
       "failed": "Single sign-on failed. Please try again.",
       "companySignInTitle": "Use your company sign-in",
-      "requiredDescription": "{{domain}} requires SSO for OpenWhispr.",
+      "requiredDescription": "{{domain}} requires SSO for Char Wispr.",
       "availableDescription": "Your {{domain}} account is ready for company SSO.",
       "useEmailInstead": "Use email and password instead"
     },
@@ -1203,7 +1203,7 @@
       "protocolUnavailable": "Browser sign-in unavailable — re-register the openwhispr:// protocol in your system's Default Apps settings."
     },
     "welcomeSubtitle": "The power of your voice. On your terms.",
-    "welcomeTitle": "Welcome to OpenWhispr",
+    "welcomeTitle": "Welcome to Char Wispr",
     "sessionExpired": "Session expired. Please restart the sign-up process."
   },
   "calendar": {
@@ -1245,7 +1245,7 @@
     "systemAudioRequired": "System Audio permission is needed to capture other participants' audio.",
     "openSettings": "Open System Settings",
     "connectCalendar": "Connect your calendar",
-    "connectCalendarDescription": "See your meetings and join them without leaving OpenWhispr.",
+    "connectCalendarDescription": "See your meetings and join them without leaving Char Wispr.",
     "connectCalendarButton": "Connect Calendar"
   },
   "cleanupPrompt": "Cleanup",
@@ -1521,15 +1521,15 @@
     "recheckChecking": "Checking...",
     "title": "Automatic Pasting",
     "usingMethodPrefix": "Using",
-    "waylandClipboardDescription": "Automatic pasting isn't available on this Wayland session. OpenWhispr will copy text to your clipboard so you can paste manually with Ctrl+V.",
+    "waylandClipboardDescription": "Automatic pasting isn't available on this Wayland session. Char Wispr will copy text to your clipboard so you can paste manually with Ctrl+V.",
     "waylandClipboardTitle": "Clipboard Mode on Wayland",
     "windowsReady": "Windows supports automatic pasting out of the box. No setup required!",
-    "withoutToolPrefix": "Without this tool, OpenWhispr will copy text to your clipboard. You can then paste manually with Ctrl+V.",
+    "withoutToolPrefix": "Without this tool, Char Wispr will copy text to your clipboard. You can then paste manually with Ctrl+V.",
     "wtypeCosmicTerminalsDescription": "On COSMIC, terminals such as Warp only receive pasted text through wtype. Other apps already paste without it.",
     "wtypeFallbackDescription": "wtype is the preferred auto-paste method for this wlroots compositor. A fallback is available, but may be less reliable.",
     "xwaylandAppsOnly": "automatic pasting works for XWayland apps only",
     "wlClipboardTitle": "Install wl-clipboard to paste into Wayland apps",
-    "wlClipboardDescription": "On this desktop, Wayland apps can only read text that OpenWhispr copies through wl-copy. To paste dictation into them, install wl-clipboard:"
+    "wlClipboardDescription": "On this desktop, Wayland apps can only read text that Char Wispr copies through wl-copy. To paste dictation into them, install wl-clipboard:"
   },
   "promptStudio": {
     "common": {
@@ -2141,7 +2141,7 @@
       "title": "AI Text Enhancement",
       "toasts": {
         "switchedCloud": {
-          "description": "Text enhancement will use OpenWhispr's cloud service.",
+          "description": "Text enhancement will use Char Wispr's cloud service.",
           "title": "Switched to OpenWhispr Cloud"
         },
         "switchedCustom": {
@@ -2230,7 +2230,7 @@
       "appearance": {
         "auto": "Auto",
         "dark": "Dark",
-        "description": "Control how OpenWhispr looks",
+        "description": "Control how Char Wispr looks",
         "light": "Light",
         "theme": "Theme",
         "themeDescription": "Choose light, dark, or match your system",
@@ -2258,8 +2258,8 @@
         "linuxPttSetupDescription": "Your user needs access to keyboard input devices.",
         "linuxPttSetupNote": "After running the command, log out and log back in.",
         "hyprlandConfigWriteWarningTitle": "Hyprland keybinds will not persist",
-        "hyprlandConfigWriteWarningDescription": "OpenWhispr cannot write to {{path}}, so keybinds will not survive a Hyprland config reload. Make sure the file exists and is writable.",
-        "hyprlandUnbindDescription": "On Hyprland, OpenWhispr claims the selected shortcut. Any existing Hyprland bind that uses the same key combination will be unbound when OpenWhispr registers its shortcut."
+        "hyprlandConfigWriteWarningDescription": "Char Wispr cannot write to {{path}}, so keybinds will not survive a Hyprland config reload. Make sure the file exists and is writable.",
+        "hyprlandUnbindDescription": "On Hyprland, Char Wispr claims the selected shortcut. Any existing Hyprland bind that uses the same key combination will be unbound when Char Wispr registers its shortcut."
       },
       "meetingHotkey": {
         "title": "Meeting Mode Hotkey",
@@ -2285,7 +2285,7 @@
       },
       "notifications": {
         "title": "Notifications",
-        "description": "Control which notifications OpenWhispr can show",
+        "description": "Control which notifications Char Wispr can show",
         "disableAll": "Disable all notifications",
         "disableAllDescription": "Silence everything except error messages",
         "meetingDetection": "Meeting detection",
@@ -2302,14 +2302,14 @@
       },
       "startup": {
         "launchAtLogin": "Launch at login",
-        "launchAtLoginDescription": "Start OpenWhispr in the background when you log in",
+        "launchAtLoginDescription": "Start Char Wispr in the background when you log in",
         "title": "Startup",
-        "description": "Control how OpenWhispr behaves when it launches",
+        "description": "Control how Char Wispr behaves when it launches",
         "startMinimized": "Start minimized",
         "startMinimizedDescription": "Launch without showing the control panel window",
         "needsApproval": {
           "title": "Approval needed in System Settings",
-          "description": "macOS registered OpenWhispr as a login item but is waiting for you to allow it under Login Items.",
+          "description": "macOS registered Char Wispr as a login item but is waiting for you to allow it under Login Items.",
           "action": "Open Login Items"
         }
       },
@@ -2361,7 +2361,7 @@
           "group": {
             "step1Title": "Add your user to the input group",
             "step2Title": "Log out and back in",
-            "step2Desc": "Group changes only take effect after a new login session. Log out of your desktop and log back in, then reopen OpenWhispr."
+            "step2Desc": "Group changes only take effect after a new login session. Log out of your desktop and log back in, then reopen Char Wispr."
           },
           "service": {
             "step1Title": "Create the service directory",
@@ -2389,7 +2389,7 @@
           "manualTitle": "Add this to your configuration",
           "manualDesc": "Configure it yourself, then rebuild.",
           "flakeTitle": "Installing via our flake?",
-          "flakeDesc": "If you install OpenWhispr from the flake, programs.openwhispr.enable turns on ydotool, the uinput module and the group memberships for you.",
+          "flakeDesc": "If you install Char Wispr from the flake, programs.openwhispr.enable turns on ydotool, the uinput module and the group memberships for you.",
           "rebuildNote": "Run sudo nixos-rebuild switch, then log out and back in so the group change and the /dev/uinput rule take effect. Replace <you> with your username."
         },
         "wlCopyDesc": "Clipboard tool that Wayland apps read pasted text from on this desktop"
@@ -2425,7 +2425,7 @@
           },
           "installUpdate": {
             "confirmText": "Install & Restart",
-            "description": "OpenWhispr will restart to apply the update.",
+            "description": "Char Wispr will restart to apply the update.",
             "title": "Install Update"
           },
           "noUpdates": {
@@ -2457,13 +2457,13 @@
     "permissions": {
       "accessibilityDescription": "Required for auto-paste to work after transcription",
       "accessibilityTitle": "Accessibility",
-      "description": "Test and manage system permissions required for OpenWhispr to function correctly",
+      "description": "Test and manage system permissions required for Char Wispr to function correctly",
       "microphoneDescription": "Captures your voice for dictation and transcription",
       "microphoneTitle": "Microphone",
       "resetAccessibility": {
-        "description": "This will remove OpenWhispr from accessibility permissions. You'll need to re-grant access in System Settings > Privacy & Security > Accessibility.",
+        "description": "This will remove Char Wispr from accessibility permissions. You'll need to re-grant access in System Settings > Privacy & Security > Accessibility.",
         "label": "Reset accessibility permissions",
-        "rowDescription": "Fix issues after reinstalling or rebuilding the app by removing and re-adding OpenWhispr in System Settings",
+        "rowDescription": "Fix issues after reinstalling or rebuilding the app by removing and re-adding Char Wispr in System Settings",
         "title": "Reset Accessibility Permissions"
       },
       "optional": "Optional",
@@ -2485,7 +2485,7 @@
       "description": "Control what data leaves your device. Everything is off by default.",
       "title": "Privacy",
       "usageAnalytics": "Usage analytics",
-      "usageAnalyticsDescription": "Help us improve OpenWhispr by sharing anonymous performance metrics. We never send transcription content — only timing and error data.",
+      "usageAnalyticsDescription": "Help us improve Char Wispr by sharing anonymous performance metrics. We never send transcription content — only timing and error data.",
       "insightsSync": "Sync personal Insights",
       "insightsSyncDescription": "Sync word counts, the date and exact time of each dictation, durations, and model types across your devices. Transcript content is never included. When you're signed in, clearing history also removes these counters from this device and your account.",
       "insightsSyncRequiresAccount": "Sign in to sync content-free Insights data across your devices.",
@@ -2548,7 +2548,7 @@
     "transcription": {
       "customSetup": "Custom Setup",
       "customSetupDescription": "Use your own provider and API key.",
-      "description": "Choose how OpenWhispr transcribes your voice",
+      "description": "Choose how Char Wispr transcribes your voice",
       "modes": {
         "openwhispr": "OpenWhispr Cloud",
         "providers": "Cloud Providers",
@@ -2566,7 +2566,7 @@
       "title": "Speech to Text",
       "toasts": {
         "switchedCloud": {
-          "description": "Transcription will use OpenWhispr's cloud service.",
+          "description": "Transcription will use Char Wispr's cloud service.",
           "title": "Switched to OpenWhispr Cloud"
         },
         "switchedCustom": {
@@ -2942,7 +2942,7 @@
       "emptyStrip_one": "{{count}} teammate hasn't joined the leaderboard yet. Rankings start when they do.",
       "emptyStrip_other": "{{count}} teammates haven't joined the leaderboard yet. Rankings start when they do.",
       "copyNudge": "Copy a nudge",
-      "nudgeText": "Join the leaderboard in OpenWhispr → Insights so we can see the team board.",
+      "nudgeText": "Join the leaderboard in Char Wispr → Insights so we can see the team board.",
       "nudgeCopied": "Nudge copied",
       "nudgeCopyError": "Couldn't copy the nudge",
       "joinTitle": "See where you rank in {{scope}}",
@@ -2978,7 +2978,7 @@
         "desktop_words": "Desktop words",
         "mobile_words": "Mobile words"
       },
-      "shareText": "See where I rank on OpenWhispr.",
+      "shareText": "See where I rank on Char Wispr.",
       "shareTitle": "Share leaderboard",
       "shareDescription": "Copy or download this card, or copy it before opening a social composer.",
       "copyImage": "Copy image",
@@ -3035,7 +3035,7 @@
     },
     "join": {
       "title": "Join your team",
-      "domainTitle": "Your team is on OpenWhispr",
+      "domainTitle": "Your team is on Char Wispr",
       "description": "These workspaces have someone from your email domain.",
       "invitedDescription": "You've been invited to a workspace.",
       "invitedBy": "Invited by {{inviter}} as {{role}}",
@@ -3161,7 +3161,7 @@
     },
     "tryAgain": "Try Again",
     "card": {
-      "brand": "OpenWhispr",
+      "brand": "Char Wispr",
       "signalId": "Signal ID",
       "audioSignature": "Your audio signature",
       "stop": "Stop",
@@ -3308,7 +3308,7 @@
     },
     "structureIntro": {
       "title": "Where your notes live",
-      "description": "OpenWhispr separates private thoughts from shared work so the right people see the right notes.",
+      "description": "Char Wispr separates private thoughts from shared work so the right people see the right notes.",
       "personal": {
         "title": "Personal space",
         "description": "Only you can see the folders and notes here."
@@ -3528,7 +3528,7 @@
       },
       "systemAudioStopped": {
         "title": "Meeting audio stopped",
-        "description": "OpenWhispr is no longer capturing the other participants. Stop and start the recording again, or check your sound output device."
+        "description": "Char Wispr is no longer capturing the other participants. Stop and start the recording again, or check your sound output device."
       },
       "systemAudioQuiet": {
         "title": "Meeting audio has gone quiet",
@@ -3802,7 +3802,7 @@
     "clearTitle": "Clear dictionary?",
     "clearDescription": "This will remove all words from your custom dictionary. This action cannot be undone.",
     "addWord": "Add word",
-    "addPlaceholder": "Add words separated by commas — OpenWhispr, Supabase, John Snow, ARR",
+    "addPlaceholder": "Add words separated by commas — Char Wispr, Supabase, John Snow, ARR",
     "removeWord": "Remove {{word}}",
     "clearAll": "Clear all",
     "add": "Add",
@@ -3835,7 +3835,7 @@
       "duplicate": "A snippet with this trigger already exists",
       "emptyTitle": "Stuff you shouldn't have to say",
       "emptyTitleAccent": "twice",
-      "emptyDescription": "Speak a trigger word and OpenWhispr replaces it with whatever you saved — URLs, intros, sign-offs, prompts.",
+      "emptyDescription": "Speak a trigger word and Char Wispr replaces it with whatever you saved — URLs, intros, sign-offs, prompts.",
       "new": "New snippet",
       "examples": {
         "linkedinTrigger": "My LinkedIn",
@@ -3869,7 +3869,7 @@
     "submitBug": "Submit Bug"
   },
   "postMigration": {
-    "title": "Welcome back to OpenWhispr",
+    "title": "Welcome back to Char Wispr",
     "description": "Your notes and settings carried over from the previous version. macOS treats this as a new app though, so a few permissions need to be granted again.",
     "done": "Done",
     "remindLater": "Remind Me Later"
@@ -3892,11 +3892,11 @@
     "ready": "GPU acceleration ready",
     "activating": "Activating GPU...",
     "activationFailed": "GPU acceleration unavailable",
-    "activationFailedDescription": "OpenWhispr switched to CPU transcription.",
-    "reasoningActivationFailedDescription": "OpenWhispr switched to CPU processing.",
+    "activationFailedDescription": "Char Wispr switched to CPU transcription.",
+    "reasoningActivationFailedDescription": "Char Wispr switched to CPU processing.",
     "retryActivation": "Retry GPU acceleration",
     "redownloadNeeded": "GPU pack needs re-downloading",
-    "redownloadNeededDescription": "This version of OpenWhispr can't use your installed GPU pack. Download it again to turn GPU acceleration back on.",
+    "redownloadNeededDescription": "This version of Char Wispr can't use your installed GPU pack. Download it again to turn GPU acceleration back on.",
     "redownloadButton": "Re-download GPU pack",
     "downloadFailed": "Couldn't download the GPU pack.",
     "remove": "Remove",
@@ -3917,11 +3917,11 @@
       "undo": "Undo",
       "accessibilityMissing": {
         "title": "Accessibility permissions required",
-        "description": "OpenWhispr needs accessibility permissions to detect your hotkey and paste text. Please enable them in the Control Panel."
+        "description": "Char Wispr needs accessibility permissions to detect your hotkey and paste text. Please enable them in the Control Panel."
       },
       "gpuFallback": {
         "title": "GPU acceleration unavailable",
-        "description": "OpenWhispr switched to CPU transcription.",
+        "description": "Char Wispr switched to CPU transcription.",
         "retry": "Retry GPU"
       },
       "gpuPackMigration": {
@@ -3966,11 +3966,11 @@
       "visionModelDescription": "Route commands that include a screenshot to a different, vision-capable model.",
       "permissionTitle": "Screen Recording",
       "permissionDescription": "macOS requires Screen Recording permission to capture your screen.",
-      "relaunchHint": "Screen Recording was granted while OpenWhispr was running. Quit and reopen OpenWhispr to start capturing screenshots."
+      "relaunchHint": "Screen Recording was granted while Char Wispr was running. Quit and reopen Char Wispr to start capturing screenshots."
     },
     "modes": {
       "openwhispr": "OpenWhispr Cloud",
-      "openwhisprDesc": "Use the OpenWhispr-managed assistant — no API key needed.",
+      "openwhisprDesc": "Use the Char Wispr-managed assistant — no API key needed.",
       "providers": "Bring your own key",
       "providersDesc": "Connect to OpenAI, Anthropic, Gemini, or Groq with your own API key.",
       "local": "Local",
@@ -4065,12 +4065,12 @@
       "openNote": "Open note",
       "unknownTool": "Unknown tool: {{name}}",
       "invalidArgs": "Invalid tool arguments for {{name}}",
-      "search_openwhispr_helpName": "Search OpenWhispr help",
-      "read_openwhispr_helpName": "Read OpenWhispr help",
-      "get_openwhispr_contextName": "Read OpenWhispr settings",
-      "search_openwhispr_helpStatus": "Searching OpenWhispr help...",
-      "read_openwhispr_helpStatus": "Reading OpenWhispr help...",
-      "get_openwhispr_contextStatus": "Reading OpenWhispr settings..."
+      "search_openwhispr_helpName": "Search Char Wispr help",
+      "read_openwhispr_helpName": "Read Char Wispr help",
+      "get_openwhispr_contextName": "Read Char Wispr settings",
+      "search_openwhispr_helpStatus": "Searching Char Wispr help...",
+      "read_openwhispr_helpStatus": "Reading Char Wispr help...",
+      "get_openwhispr_contextStatus": "Reading Char Wispr settings..."
     }
   },
   "assistant": {
@@ -4110,7 +4110,7 @@
       "disconnectConfirm": "Disconnect {{email}}?",
       "disconnectDescription": "Meeting notes will no longer be recorded from this calendar.",
       "systemAudioRequired": "System Audio Permission Required",
-      "systemAudioDescription": "To transcribe meetings, OpenWhispr needs the System Audio permission to capture other participants' audio. We never record your screen. You'll be taken to System Settings to enable it.",
+      "systemAudioDescription": "To transcribe meetings, Char Wispr needs the System Audio permission to capture other participants' audio. We never record your screen. You'll be taken to System Settings to enable it.",
       "openSettings": "Open System Settings",
       "connectFailed": "Connection Failed",
       "connectFailedDescription": "Something went wrong while connecting Google Calendar. Please try again."
@@ -4138,10 +4138,10 @@
       "disconnectConfirm": "Disconnect Apple Calendar?",
       "disconnectDescription": "Meeting notes will no longer be recorded from your Apple Calendar.",
       "permissionDenied": "Calendar Access Required",
-      "permissionDeniedDescription": "OpenWhispr needs calendar access to detect meetings. Enable OpenWhispr in System Settings under Privacy & Security → Calendars.",
+      "permissionDeniedDescription": "Char Wispr needs calendar access to detect meetings. Enable Char Wispr in System Settings under Privacy & Security → Calendars.",
       "openSettings": "Open System Settings",
       "connectFailed": "Connection Failed",
-      "connectFailedDescription": "Something went wrong while connecting to Calendar.app. Please restart OpenWhispr and try again."
+      "connectFailedDescription": "Something went wrong while connecting to Calendar.app. Please restart Char Wispr and try again."
     },
     "api": {
       "description": "Manage API keys for programmatic access",
@@ -4168,7 +4168,7 @@
       "local": {
         "label": "Local",
         "freeBadge": "Free",
-        "description": "Read your local notes directly. No login or API key — works while OpenWhispr is running."
+        "description": "Read your local notes directly. No login or API key — works while Char Wispr is running."
       },
       "cloud": {
         "label": "Cloud",
@@ -4188,7 +4188,7 @@
       "upgrade": "Upgrade"
     },
     "notABot": {
-      "description": "OpenWhispr captures audio directly from your system — it never joins your meetings as a participant. Just connect your calendar and take notes as normal."
+      "description": "Char Wispr captures audio directly from your system — it never joins your meetings as a participant. Just connect your calendar and take notes as normal."
     },
     "nav": {
       "label": "Integration sections",
@@ -4243,7 +4243,7 @@
         "reconnect_needed": "Slack needs to be reconnected in Settings.",
         "connection_changed": "The Slack connection changed before sending, so nothing was sent.",
         "rate_limited": "Slack is busy. Try again shortly.",
-        "missing_scope": "OpenWhispr doesn't have permission to post there. Reconnect Slack in Settings.",
+        "missing_scope": "Char Wispr doesn't have permission to post there. Reconnect Slack in Settings.",
         "msg_too_long": "The message is too long for Slack (12,000 characters at most, once formatted).",
         "no_text": "The message is empty.",
         "network": "Slack couldn't be reached. Nothing was sent.",
@@ -4258,9 +4258,9 @@
           "connection_changed": "The GitHub connection changed before posting, so nothing was posted.",
           "credential_save_failed": "The GitHub login couldn't be saved on this computer. Nothing was posted. Try again.",
           "generic": "Something went wrong. Nothing was posted to GitHub.",
-          "not_installed": "The OpenWhispr GitHub App isn't installed on this repository. Add it in Settings. Nothing was posted.",
-          "repo_unlisted": "Couldn't confirm the OpenWhispr GitHub App is installed on this repository. Check the repository name. Nothing was posted.",
-          "no_repositories": "No repositories are chosen for the OpenWhispr GitHub App yet. Choose them in Settings. Nothing was posted.",
+          "not_installed": "The Char Wispr GitHub App isn't installed on this repository. Add it in Settings. Nothing was posted.",
+          "repo_unlisted": "Couldn't confirm the Char Wispr GitHub App is installed on this repository. Check the repository name. Nothing was posted.",
+          "no_repositories": "No repositories are chosen for the Char Wispr GitHub App yet. Choose them in Settings. Nothing was posted.",
           "forbidden": "You don't have permission to do this in the repository. Nothing was posted.",
           "not_found": "The issue or pull request couldn't be found. Nothing was posted.",
           "issues_disabled": "Issues are turned off in this repository. Nothing was posted.",
@@ -4305,7 +4305,7 @@
           "wrong_workspace": "That issue is in another Linear workspace. Nothing was sent.",
           "invalid_reference": "That isn't a Linear issue. Nothing was sent.",
           "refused": "Linear refused the request. Nothing was sent.",
-          "unknown_action": "OpenWhispr can't do that in Linear. Nothing was sent.",
+          "unknown_action": "Char Wispr can't do that in Linear. Nothing was sent.",
           "generic": "Something went wrong. Nothing was sent to Linear."
         }
       },
@@ -4403,7 +4403,7 @@
         "oauth_denied": "Slack wasn't connected because access wasn't allowed.",
         "oauth_timeout": "Connecting took too long. Try again.",
         "oauth_state_mismatch": "That sign-in link was out of date. Try again.",
-        "ports_busy": "Another app is using the ports OpenWhispr needs to connect. Close it and try again.",
+        "ports_busy": "Another app is using the ports Char Wispr needs to connect. Close it and try again.",
         "token_exchange_failed": "Slack didn't finish connecting. Try again.",
         "not_configured": "Slack isn't available in this build.",
         "connection_changed": "Your account or Slack connection changed while connecting. Try again.",
@@ -4413,9 +4413,9 @@
       },
       "browser": {
         "connectedTitle": "Slack is connected",
-        "connectedBody": "You can close this tab and return to OpenWhispr.",
+        "connectedBody": "You can close this tab and return to Char Wispr.",
         "failedTitle": "Slack wasn't connected",
-        "failedBody": "Return to OpenWhispr to try again."
+        "failedBody": "Return to Char Wispr to try again."
       }
     },
     "github": {
@@ -4430,7 +4430,7 @@
       "connectedAs_unknown": "Connected as {{account}}",
       "needsReconnect": "GitHub needs to be reconnected.",
       "reviewOnGithub": "Review on GitHub",
-      "disconnectedHint": "Disconnected from this computer. GitHub keeps OpenWhispr's authorization until you remove it there.",
+      "disconnectedHint": "Disconnected from this computer. GitHub keeps Char Wispr's authorization until you remove it there.",
       "errors": {
         "connect_failed": "Couldn't connect GitHub. Try again.",
         "disconnect_failed": "Couldn't disconnect GitHub. Try again.",
@@ -4464,7 +4464,7 @@
       "connect": "Connect",
       "reconnect": "Reconnect",
       "disconnect": "Disconnect",
-      "connecting": "Finish connecting in your browser… If Google says access is blocked, your organization's Google admin needs to allow OpenWhispr.",
+      "connecting": "Finish connecting in your browser… If Google says access is blocked, your organization's Google admin needs to allow Char Wispr.",
       "connectedAs": "Connected as {{account}}",
       "needsReconnect": "Gmail needs to be reconnected.",
       "grantKept": "Disconnected. Google Calendar uses the same Google permission, so OpenWhispr stays listed in your Google Account until you disconnect Google Calendar too.",
@@ -4472,9 +4472,9 @@
         "connect_failed": "Couldn't connect Gmail. Try again.",
         "disconnect_failed": "Couldn't disconnect Gmail. Try again.",
         "oauth_denied": "Gmail wasn't connected because access wasn't allowed.",
-        "oauth_timeout": "Connecting took too long. If Google said access is blocked, ask your organization's Google admin to allow OpenWhispr. Otherwise, try again.",
+        "oauth_timeout": "Connecting took too long. If Google said access is blocked, ask your organization's Google admin to allow Char Wispr. Otherwise, try again.",
         "oauth_state_mismatch": "That sign-in link was out of date. Try again.",
-        "ports_busy": "Another app is using the ports OpenWhispr needs to connect. Close it and try again.",
+        "ports_busy": "Another app is using the ports Char Wispr needs to connect. Close it and try again.",
         "token_exchange_failed": "Google didn't finish connecting. Try again.",
         "not_configured": "Gmail isn't available in this build.",
         "connection_changed": "Your account or Gmail connection changed while connecting. Try again.",
@@ -4483,13 +4483,13 @@
         "policy_unavailable": "Couldn't check your organization's settings. Try again.",
         "permission_not_granted": "Gmail wasn't connected because permission to send email wasn't granted. Connect again and leave that permission ticked.",
         "email_not_verified": "Google hasn't verified this account's email address, so Gmail wasn't connected.",
-        "domain_policy": "Your organization's Google admin blocked this app. Ask them to allow OpenWhispr."
+        "domain_policy": "Your organization's Google admin blocked this app. Ask them to allow Char Wispr."
       },
       "browser": {
         "connectedTitle": "Gmail is connected",
-        "connectedBody": "You can close this tab and return to OpenWhispr.",
+        "connectedBody": "You can close this tab and return to Char Wispr.",
         "failedTitle": "Gmail wasn't connected",
-        "failedBody": "Return to OpenWhispr to try again."
+        "failedBody": "Return to Char Wispr to try again."
       }
     },
     "linear": {
@@ -4507,7 +4507,7 @@
         "oauth_denied": "Linear wasn't connected because access wasn't allowed.",
         "oauth_timeout": "Connecting took too long. Try again.",
         "oauth_state_mismatch": "That sign-in link was out of date. Try again.",
-        "ports_busy": "Another app is using the ports OpenWhispr needs to connect. Close it and try again.",
+        "ports_busy": "Another app is using the ports Char Wispr needs to connect. Close it and try again.",
         "token_exchange_failed": "Linear didn't finish connecting. Try again.",
         "not_configured": "Linear isn't available in this build.",
         "connection_changed": "Your account or Linear connection changed while connecting. Try again.",
@@ -4518,9 +4518,9 @@
       },
       "browser": {
         "connectedTitle": "Linear is connected",
-        "connectedBody": "You can close this tab and return to OpenWhispr.",
+        "connectedBody": "You can close this tab and return to Char Wispr.",
         "failedTitle": "Linear wasn't connected",
-        "failedBody": "Return to OpenWhispr to try again."
+        "failedBody": "Return to Char Wispr to try again."
       },
       "notes": {
         "priority": {
@@ -4600,8 +4600,8 @@
           "connection_changed": "The GitHub connection changed.",
           "credential_save_failed": "Couldn't save the GitHub login on this computer.",
           "generic": "That didn't work on GitHub.",
-          "not_installed": "The OpenWhispr GitHub App isn't installed there.",
-          "repo_unlisted": "Couldn't confirm the OpenWhispr GitHub App is installed there.",
+          "not_installed": "The Char Wispr GitHub App isn't installed there.",
+          "repo_unlisted": "Couldn't confirm the Char Wispr GitHub App is installed there.",
           "no_repositories": "No GitHub repositories chosen yet.",
           "forbidden": "No permission in that repository.",
           "not_found": "Couldn't find that issue or pull request.",
@@ -4714,7 +4714,7 @@
         "invitationActions": "Invitation actions",
         "resendSent": "Invitation sent",
         "resendThrottled": "Invitation sent recently. Try again in a minute.",
-        "syncPrompt": "Sharing keeps a copy of this note in your OpenWhispr cloud. Only you can see it until you choose who to share it with.",
+        "syncPrompt": "Sharing keeps a copy of this note in your Char Wispr cloud. Only you can see it until you choose who to share it with.",
         "syncAndShare": "Sync note",
         "visibility": {
           "label": "Visibility",
@@ -4776,7 +4776,7 @@
   },
   "permissionsGate": {
     "title": "Permissions Required",
-    "description": "OpenWhispr needs a few permissions to work on this computer.",
+    "description": "Char Wispr needs a few permissions to work on this computer.",
     "continue": "Continue"
   },
   "embeddedChat": {

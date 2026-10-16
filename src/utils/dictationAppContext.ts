@@ -10,10 +10,10 @@ export interface DictationApp {
 let current: DictationApp | null = null;
 
 // Dictating from OpenWhispr's own panel says nothing about where the text goes.
-const OWN_BUNDLE_ID = "com.gizmolabs.openwhispr";
+const OWN_BUNDLE_IDS = new Set(["co.cifrato.charwispr", "com.gizmolabs.openwhispr"]);
 
 export function setDictationAppContext(app: DictationApp | null | undefined): void {
-  const usable = app && (app.name || app.bundleId) && app.bundleId !== OWN_BUNDLE_ID;
+  const usable = app && (app.name || app.bundleId) && !OWN_BUNDLE_IDS.has(app.bundleId ?? "");
   current = usable ? { name: app.name, bundleId: app.bundleId } : null;
 }
 
