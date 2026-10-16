@@ -8,22 +8,26 @@ const {
   storeSubscriptionsUrl,
 } = require("../../src/lib/upsell.ts");
 
-test("the upgrade CTA survives sign-out and is withheld while entitlement is unknown", () => {
-  const decide = (overrides) =>
-    decideUpsell({
-      authLoaded: true,
-      isSignedIn: true,
-      hasPaidAccess: false,
-      isPastDue: false,
-      ...overrides,
-    });
-
-  assert.equal(decide({ isSignedIn: false }), "show");
-  assert.equal(decide({ authLoaded: false, isSignedIn: false }), "unknown");
-  assert.equal(decide({ hasPaidAccess: null }), "unknown");
-  assert.equal(decide({ hasPaidAccess: true }), "hide");
-  assert.equal(decide({ isPastDue: true }), "hide");
-  assert.equal(decide({}), "show");
+test("Char Wispr never shows the upgrade promo, whatever the plan state", () => {
+  for (const overrides of [
+    { isSignedIn: false },
+    { authLoaded: false, isSignedIn: false },
+    { hasPaidAccess: null },
+    { hasPaidAccess: true },
+    { isPastDue: true },
+    {},
+  ]) {
+    assert.equal(
+      decideUpsell({
+        authLoaded: true,
+        isSignedIn: true,
+        hasPaidAccess: false,
+        isPastDue: false,
+        ...overrides,
+      }),
+      "hide"
+    );
+  }
 });
 
 test("a workspace-covered member is never offered a personal Pro checkout", () => {
