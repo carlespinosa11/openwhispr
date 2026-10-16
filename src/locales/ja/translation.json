@@ -3436,7 +3436,12 @@
       "invalid_one": "{{count}} line without =>",
       "save": "Save",
       "appContext": "Adapt cleanup to the active app",
-      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style.",
+      "quickTitle": "Fast short dictations",
+      "quickDescription": "Skip the AI cleanup when a dictation has this many words or fewer. The text pastes about a second sooner, as the speech model wrote it.",
+      "quickOff": "Always clean up",
+      "quickUpTo_other": "Up to {{count}} words",
+      "quickUpTo_one": "Up to {{count}} word"
     }
   },
   "referral": {

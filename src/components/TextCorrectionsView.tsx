@@ -3,15 +3,23 @@ import { useTranslation } from "react-i18next";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { Toggle } from "./ui/toggle";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { PAGE_CONTENT_WIDTH_CLASS } from "./ui/pageWidth";
 import { cn } from "./lib/utils";
 import { useSettings } from "../hooks/useSettings";
 import { parseTextCorrections } from "../utils/textCorrections";
+import { CLEANUP_SKIP_OPTIONS } from "../utils/quickDictation";
 
 export default function TextCorrectionsView() {
   const { t } = useTranslation();
-  const { textCorrections, setTextCorrections, cleanupAppContext, setCleanupAppContext } =
-    useSettings();
+  const {
+    textCorrections,
+    setTextCorrections,
+    cleanupAppContext,
+    setCleanupAppContext,
+    cleanupSkipMaxWords,
+    setCleanupSkipMaxWords,
+  } = useSettings();
   const saved = textCorrections.join("\n");
   const [draft, setDraft] = useState(saved);
 
@@ -72,6 +80,35 @@ export default function TextCorrectionsView() {
           onChange={setCleanupAppContext}
           ariaLabel={t("dictionary.corrections.appContext")}
         />
+      </div>
+
+      <div className="flex items-center justify-between gap-4 rounded-xl border border-border px-4 py-3">
+        <div className="flex flex-col gap-0.5">
+          <span className="text-sm text-foreground">{t("dictionary.corrections.quickTitle")}</span>
+          <span className="text-xs text-foreground/55">
+            {t("dictionary.corrections.quickDescription")}
+          </span>
+        </div>
+        <Select
+          value={String(cleanupSkipMaxWords)}
+          onValueChange={(value) => setCleanupSkipMaxWords(Number(value))}
+        >
+          <SelectTrigger
+            className="h-8 w-40 shrink-0 text-xs"
+            aria-label={t("dictionary.corrections.quickTitle")}
+          >
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {CLEANUP_SKIP_OPTIONS.map((n) => (
+              <SelectItem key={n} value={String(n)}>
+                {n === 0
+                  ? t("dictionary.corrections.quickOff")
+                  : t("dictionary.corrections.quickUpTo", { count: n })}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
     </div>
   );

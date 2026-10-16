@@ -3859,7 +3859,12 @@
       "invalid_other": "{{count}} lines without =>",
       "save": "Save",
       "appContext": "Adapt cleanup to the active app",
-      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style."
+      "appContextDescription": "Sends the name of the app you're dictating into (Slack, Mail, Cursor…) to the cleanup model so it matches that app's style.",
+      "quickTitle": "Fast short dictations",
+      "quickDescription": "Skip the AI cleanup when a dictation has this many words or fewer. The text pastes about a second sooner, as the speech model wrote it.",
+      "quickOff": "Always clean up",
+      "quickUpTo_one": "Up to {{count}} word",
+      "quickUpTo_other": "Up to {{count}} words"
     }
   },
   "support": {
@@ -4243,7 +4248,7 @@
         "reconnect_needed": "Slack needs to be reconnected in Settings.",
         "connection_changed": "The Slack connection changed before sending, so nothing was sent.",
         "rate_limited": "Slack is busy. Try again shortly.",
-        "missing_scope": "Char Wispr doesn't have permission to post there. Reconnect Slack in Settings.",
+        "missing_scope": "OpenWhispr doesn't have permission to post there. Reconnect Slack in Settings.",
         "msg_too_long": "The message is too long for Slack (12,000 characters at most, once formatted).",
         "no_text": "The message is empty.",
         "network": "Slack couldn't be reached. Nothing was sent.",
@@ -4258,9 +4263,9 @@
           "connection_changed": "The GitHub connection changed before posting, so nothing was posted.",
           "credential_save_failed": "The GitHub login couldn't be saved on this computer. Nothing was posted. Try again.",
           "generic": "Something went wrong. Nothing was posted to GitHub.",
-          "not_installed": "The Char Wispr GitHub App isn't installed on this repository. Add it in Settings. Nothing was posted.",
-          "repo_unlisted": "Couldn't confirm the Char Wispr GitHub App is installed on this repository. Check the repository name. Nothing was posted.",
-          "no_repositories": "No repositories are chosen for the Char Wispr GitHub App yet. Choose them in Settings. Nothing was posted.",
+          "not_installed": "The OpenWhispr GitHub App isn't installed on this repository. Add it in Settings. Nothing was posted.",
+          "repo_unlisted": "Couldn't confirm the OpenWhispr GitHub App is installed on this repository. Check the repository name. Nothing was posted.",
+          "no_repositories": "No repositories are chosen for the OpenWhispr GitHub App yet. Choose them in Settings. Nothing was posted.",
           "forbidden": "You don't have permission to do this in the repository. Nothing was posted.",
           "not_found": "The issue or pull request couldn't be found. Nothing was posted.",
           "issues_disabled": "Issues are turned off in this repository. Nothing was posted.",
@@ -4305,7 +4310,7 @@
           "wrong_workspace": "That issue is in another Linear workspace. Nothing was sent.",
           "invalid_reference": "That isn't a Linear issue. Nothing was sent.",
           "refused": "Linear refused the request. Nothing was sent.",
-          "unknown_action": "Char Wispr can't do that in Linear. Nothing was sent.",
+          "unknown_action": "OpenWhispr can't do that in Linear. Nothing was sent.",
           "generic": "Something went wrong. Nothing was sent to Linear."
         }
       },
@@ -4430,7 +4435,7 @@
       "connectedAs_unknown": "Connected as {{account}}",
       "needsReconnect": "GitHub needs to be reconnected.",
       "reviewOnGithub": "Review on GitHub",
-      "disconnectedHint": "Disconnected from this computer. GitHub keeps Char Wispr's authorization until you remove it there.",
+      "disconnectedHint": "Disconnected from this computer. GitHub keeps OpenWhispr's authorization until you remove it there.",
       "errors": {
         "connect_failed": "Couldn't connect GitHub. Try again.",
         "disconnect_failed": "Couldn't disconnect GitHub. Try again.",
@@ -4600,8 +4605,8 @@
           "connection_changed": "The GitHub connection changed.",
           "credential_save_failed": "Couldn't save the GitHub login on this computer.",
           "generic": "That didn't work on GitHub.",
-          "not_installed": "The Char Wispr GitHub App isn't installed there.",
-          "repo_unlisted": "Couldn't confirm the Char Wispr GitHub App is installed there.",
+          "not_installed": "The OpenWhispr GitHub App isn't installed there.",
+          "repo_unlisted": "Couldn't confirm the OpenWhispr GitHub App is installed there.",
           "no_repositories": "No GitHub repositories chosen yet.",
           "forbidden": "No permission in that repository.",
           "not_found": "Couldn't find that issue or pull request.",

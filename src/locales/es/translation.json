@@ -3560,7 +3560,12 @@
       "invalid_other": "{{count}} líneas sin =>",
       "save": "Guardar",
       "appContext": "Adaptar la limpieza a la app activa",
-      "appContextDescription": "Envía al modelo de limpieza el nombre de la app donde estás dictando (Slack, Mail, Cursor…) para que ajuste el estilo."
+      "appContextDescription": "Envía al modelo de limpieza el nombre de la app donde estás dictando (Slack, Mail, Cursor…) para que ajuste el estilo.",
+      "quickTitle": "Dictados cortos rápidos",
+      "quickDescription": "Salta la limpieza con IA cuando el dictado tiene estas palabras o menos. El texto se pega cerca de un segundo antes, tal como lo escribió el modelo de voz.",
+      "quickOff": "Siempre limpiar",
+      "quickUpTo_one": "Hasta {{count}} palabra",
+      "quickUpTo_other": "Hasta {{count}} palabras"
     }
   },
   "insights": {
@@ -4125,7 +4130,7 @@
         "reconnect_needed": "Slack debe reconectarse en Configuración.",
         "connection_changed": "La conexión de Slack cambió antes de enviar, así que no se envió nada.",
         "rate_limited": "Slack está ocupado. Vuelve a intentarlo en breve.",
-        "missing_scope": "Char Wispr no tiene permiso para publicar ahí. Reconecta Slack en Configuración.",
+        "missing_scope": "OpenWhispr no tiene permiso para publicar ahí. Reconecta Slack en Configuración.",
         "msg_too_long": "El mensaje es demasiado largo para Slack (12.000 caracteres como máximo, una vez formateado).",
         "no_text": "El mensaje está vacío.",
         "network": "No se pudo conectar con Slack. No se envió nada.",
@@ -4140,9 +4145,9 @@
           "connection_changed": "La conexión de GitHub cambió antes de publicar, así que no se publicó nada.",
           "credential_save_failed": "No se pudo guardar el inicio de sesión de GitHub en este equipo. No se publicó nada. Inténtalo de nuevo.",
           "generic": "Algo salió mal. No se publicó nada en GitHub.",
-          "not_installed": "La aplicación Char Wispr de GitHub no está instalada en este repositorio. Añádela en Configuración. No se publicó nada.",
-          "repo_unlisted": "No se pudo confirmar que la aplicación Char Wispr de GitHub esté instalada en este repositorio. Comprueba el nombre del repositorio. No se publicó nada.",
-          "no_repositories": "Aún no hay repositorios elegidos para la aplicación Char Wispr de GitHub. Elígelos en Configuración. No se publicó nada.",
+          "not_installed": "La aplicación OpenWhispr de GitHub no está instalada en este repositorio. Añádela en Configuración. No se publicó nada.",
+          "repo_unlisted": "No se pudo confirmar que la aplicación OpenWhispr de GitHub esté instalada en este repositorio. Comprueba el nombre del repositorio. No se publicó nada.",
+          "no_repositories": "Aún no hay repositorios elegidos para la aplicación OpenWhispr de GitHub. Elígelos en Configuración. No se publicó nada.",
           "forbidden": "No tienes permiso para hacer esto en el repositorio. No se publicó nada.",
           "not_found": "No se encontró el issue o la pull request. No se publicó nada.",
           "issues_disabled": "Los issues están desactivados en este repositorio. No se publicó nada.",
@@ -4187,7 +4192,7 @@
           "wrong_workspace": "Esa incidencia está en otro espacio de trabajo de Linear. No se envió nada.",
           "invalid_reference": "Eso no es una incidencia de Linear. No se envió nada.",
           "refused": "Linear rechazó la solicitud. No se envió nada.",
-          "unknown_action": "Char Wispr no puede hacer eso en Linear. No se envió nada.",
+          "unknown_action": "OpenWhispr no puede hacer eso en Linear. No se envió nada.",
           "generic": "Algo salió mal. No se envió nada a Linear."
         }
       },
@@ -4312,7 +4317,7 @@
       "connectedAs_unknown": "Conectado como {{account}}",
       "needsReconnect": "GitHub debe reconectarse.",
       "reviewOnGithub": "Revisar en GitHub",
-      "disconnectedHint": "Desconectado de este equipo. GitHub conserva la autorización de Char Wispr hasta que la quites allí.",
+      "disconnectedHint": "Desconectado de este equipo. GitHub conserva la autorización de OpenWhispr hasta que la quites allí.",
       "errors": {
         "connect_failed": "No se pudo conectar GitHub. Inténtalo de nuevo.",
         "disconnect_failed": "No se pudo desconectar GitHub. Inténtalo de nuevo.",
@@ -4482,8 +4487,8 @@
           "connection_changed": "La conexión de GitHub cambió.",
           "credential_save_failed": "No se pudo guardar el inicio de sesión de GitHub en este equipo.",
           "generic": "No funcionó en GitHub.",
-          "not_installed": "La aplicación Char Wispr de GitHub no está instalada ahí.",
-          "repo_unlisted": "No se pudo confirmar que la aplicación Char Wispr de GitHub esté instalada ahí.",
+          "not_installed": "La aplicación OpenWhispr de GitHub no está instalada ahí.",
+          "repo_unlisted": "No se pudo confirmar que la aplicación OpenWhispr de GitHub esté instalada ahí.",
           "no_repositories": "Aún no hay repositorios de GitHub elegidos.",
           "forbidden": "Sin permiso en ese repositorio.",
           "not_found": "No se encontró ese issue o pull request.",

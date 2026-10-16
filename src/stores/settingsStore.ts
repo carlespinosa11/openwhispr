@@ -329,6 +329,7 @@ const ARRAY_SETTINGS = new Set([
 
 const NUMERIC_SETTINGS = new Set([
   "micWarmHoldSeconds",
+  "cleanupSkipMaxWords",
   "audioRetentionDays",
   "transcriptRetentionDays",
   "whisperVadThreshold",
@@ -1122,6 +1123,7 @@ export interface SettingsState
   applyCustomDictionaryFromExternal: (words: string[]) => void;
   setSnippets: (snippets: Snippet[]) => void;
   setTextCorrections: (lines: string[]) => void;
+  setCleanupSkipMaxWords: (value: number) => void;
   setCleanupAppContext: (value: boolean) => void;
   applySnippetsFromExternal: (snippets: Snippet[]) => void;
   setAssemblyAiStreaming: (value: boolean) => void;
@@ -1536,6 +1538,7 @@ export const useSettingsStore = create<SettingsState>()((set, get) => ({
   cortiTenant: readString("cortiTenant", "base"),
   customDictionary: readStringArray("customDictionary", []),
   textCorrections: readStringArray("textCorrections", []),
+  cleanupSkipMaxWords: readNumber("cleanupSkipMaxWords", 0),
   cleanupAppContext: readBoolean("cleanupAppContext", true),
   snippets: (() => {
     try {
@@ -2159,6 +2162,7 @@ export const useSettingsStore = create<SettingsState>()((set, get) => ({
     set({ textCorrections: lines });
   },
   setCleanupAppContext: createBooleanSetter("cleanupAppContext"),
+  setCleanupSkipMaxWords: createNumberSetter("cleanupSkipMaxWords"),
 
   setSnippets: (snippets: Snippet[]) => {
     if (isBrowser) localStorage.setItem("snippets", JSON.stringify(snippets));

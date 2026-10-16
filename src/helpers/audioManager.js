@@ -147,6 +147,7 @@ import {
 import { getDictionaryHintWords } from "../utils/snippets";
 import { applyTextCorrections } from "../utils/textCorrections";
 import { setDictationAppContext } from "../utils/dictationAppContext";
+import { quickFormat, shouldSkipCleanup } from "../utils/quickDictation";
 import { normalizeAgentSelectionContext } from "../utils/agentSelectionContext";
 import { getAgentName } from "../utils/agentName";
 import { shouldDisplayDictationPreview } from "../utils/transcriptionPreview";
@@ -3348,6 +3349,16 @@ registerProcessor("pcm-streaming-processor", PCMStreamingProcessor);
         }
         this._noteCleanupRoute(settings, route);
         if (route.kind === "skip") return normalizedText;
+        if (
+          route.kind === "cleanup" &&
+          shouldSkipCleanup(normalizedText, settings.cleanupSkipMaxWords)
+        ) {
+          logger.logReasoning("CLEANUP_SKIPPED_SHORT_DICTATION", {
+            maxWords: settings.cleanupSkipMaxWords,
+            textLength: normalizedText.length,
+          });
+          return quickFormat(normalizedText);
+        }
 
         if (route.kind === "translation") {
           const { text: translatedText } = await this.runTranslationChain({

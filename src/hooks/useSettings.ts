@@ -48,6 +48,7 @@ export interface TranscriptionSettings {
   snippets: Snippet[];
   textCorrections: string[];
   cleanupAppContext: boolean;
+  cleanupSkipMaxWords: number;
   assemblyAiStreaming: boolean;
   showTranscriptionPreview: boolean;
 }
@@ -322,6 +323,8 @@ function useSettingsInternal() {
     setTextCorrections: store.setTextCorrections,
     cleanupAppContext: store.cleanupAppContext,
     setCleanupAppContext: store.setCleanupAppContext,
+    cleanupSkipMaxWords: store.cleanupSkipMaxWords,
+    setCleanupSkipMaxWords: store.setCleanupSkipMaxWords,
     assemblyAiStreaming: store.assemblyAiStreaming,
     setAssemblyAiStreaming: store.setAssemblyAiStreaming,
     autoGenerateNoteTitle: store.autoGenerateNoteTitle,
